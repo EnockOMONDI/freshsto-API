@@ -1,0 +1,40 @@
+<div class="banner section-padding-120 pb-0" id="home-1">
+  <div class="slider-image" id="banner-slider-image">
+    <div class="slider-2"></div>
+    <div class="slider-3"></div>
+    <div class="slider-4"></div>
+    <div class="slider-5"></div>
+    <div class="slider-6"></div>
+    <div class="slider-text">
+      <div class="scrolling-text vertical-scroll text-center">
+        <div>Organic</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 align-self-center mt-mb-0 mb-4">
+        <div class="hero-left">
+          <h2 id="banner-title">Fresh <span class="text-primary">Grocery</span><br>
+            Shopping
+          </h2>
+          <p id="banner-description">It Is a long established fact that a readerwill be <br>
+            the readable content of a page
+          </p>
+          <div class="iq-btn-container" id="banner-action">
+            <a href="javascript:void(0)">
+              <div class="btn btn-secondary animation-btn">
+                  View More
+                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" id="banner-image-bg"
+        style="background: url(assets/images/banner/banner-2-shap.png) no-repeat scroll center center; background-size:contain; ">
+        <img alt="img" src="assets/images/banner/man.png" id="banner-image" class="img-fluid mx-auto d-block">
+      </div>
+    </div>
+  </div>
+</div>
