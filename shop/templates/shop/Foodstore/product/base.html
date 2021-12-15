@@ -41,13 +41,7 @@
       <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.6.0/uploadcare.full.min.js"></script>
 </head>
 <body class="">
-    <span class="screen-darken"></span>
-    <!-- loader Start -->
-    <div id="loading">
-      <div class="loader simple-loader">
-          <div class="loader-body"></div>
-      </div>    </div>
-      {% include 'shop/foodstore/navbar.html' %}
+    {% include 'shop/foodstore/navbar.html' %}
     {% csrf_token %}
 {% block content %}
 

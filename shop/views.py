@@ -19,35 +19,23 @@ def product_list(request, category_slug=None):
         category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=category)
 
-    return render(request, 'shop/product/list.html',   context={
+    return render(request, 'shop/foodstore/product/list.html',   context={
         'category': category,
         'categories': categories,
         'products': products,
         'client_orders':client_orders,
         'tab': 'shop',
-        'local_css_urls': ["css3/easy-responsive-tabs.css",
-                           "css3/material-kit.min1036.css",
-                           "css3/demo.css",
-                           "css3/vertical-nav.css"],
-        'local_js_urls': ["core/jquery.min.js",
-                          "core/popper.min.js",
-                          "core/bootstrap-material-design.min.js",
-                          "js3/vertical-nav.js",
-                          "js3/material-kit.min1036.js",
-                          "js3/demo.js",
-                          "js3/buttons.js",
-                          "js3/modernizr.js",
-                          "js3/bootstrap.min.js",
-                          "js3/plugins/moment.min.js ",
-                          "js3/plugins/bootstrap-datetimepicker.js",
-                          "js3/plugins/jquery.flexisel.js",
-                          "js3/plugins/jquery.sharrre.js",
-                          "js3/plugins/nouislider.min.js",
-                          "js3/plugins/bootstrap-selectpicker.js",
-                          "js3/plugins/bootstrap-tagsinput.js",
-                          "js3/plugins/jasny-bootstrap.min.js"],
+         'local_css_urls': [ "assets/css/libs.min.css",
+                            "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
+                            "assets/css/foodsto.mine209.css?v=1.0.0"],
+        'local_js_urls':  [
+                        "assets/js/libs.min.js",
+                        "assets/vendor/gsap/gsap.min.js",
+                        "assets/vendor/gsap/ScrollTrigger.min.js",
+                        "assets/js/app.js",
+                        "assets/js/gsap.js",
+                        "assets/js/slider.js"]
     })
-
 
 def subcategory_list(request, subcategory_slug=None):
     subcategory = None
