@@ -4,7 +4,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 import keys
 # from cart import *
-from .orders.models import Order
+from orders.models import Order
 
 
 unformatted_time = datetime.now()
@@ -63,7 +63,7 @@ def client_price(request, id, slug):
     product = Product.objects.get(id=id, slug=slug )
     client = Client.objects.get(user=request.user)
     client_orders = client.no_of_orders
-    price1 =float(product.price)-float(product.) * 0.1
+    price1 =float(product.price)-float(product.price) * 0.1
     price_discount_1 = float(product.price)-float(price1) 
     price2 =  float(product.price) * 0.25
     price_discount_2 = float(product.price)-float(price2) 

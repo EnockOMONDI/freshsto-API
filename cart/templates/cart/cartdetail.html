@@ -1,0 +1,262 @@
+{% extends 'shop/foodstore/product/base.html' %}
+{% load static %}
+{% block title %}
+    Your Shopping Cart
+{% endblock %}
+
+
+{% block content %}
+<main class="main-content">
+<!--  
+<div class="text-left iq-breadcrumb-one iq-bg-over black" style="background: url(assets/images/banner/pages-banner.png) no-repeat scroll right center; background-size: contain;">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-sm-12">
+              <nav aria-label="breadcrumb" class="text-center iq-breadcrumb-two">
+                  <h1 class="title">Cart</h1>
+                  <ol class="breadcrumb main-bg">
+                      <li class="breadcrumb-item">
+                           <a href="index.html"><i class="fas fa-home me-2"></i>Home</a>
+                      </li>
+                      <li class="breadcrumb-item active">Cart</li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div> -->
+<div class="section-padding-120">
+  <div class="container">
+      <div class="row">
+      <div class="col-lg-12 align-items-center">
+
+          <div class="card">
+            {% with totail_items=cart|length %}
+            {% if cart|length > 0 %}
+                    
+            <div class="col">
+ 
+            
+                    <div class="card-body position-relative ms-3">
+                  
+                   
+                       
+                        <div class="iq-blog-meta">
+                            <p><strong>Hey {{request.user.first_name }},</a> your shopping Cart has : </strong></p>
+                           <div class="btn btn-secondary animation-btn">
+                                {{ totail_items }} item {{ totail_items|pluralize }}, KSH {{ cart.get_total_price }} 
+ 
+                        </div>
+                    
+                        <div class="iq-blog-category"><a href="" class="badge bg-primary"></a></div>
+                    </div>
+                <br>
+                        <a class="btn p-0 d-flex align-items-center iq-btn-link iq-btn-read-effect" href="{% url 'shop:product_list' %}">
+                            <span class="iq-button-effact text-primary">
+                              Continue Shopping
+                                <i class="fas fa-long-arrow-alt-right text-primary ms-2"></i>
+                            </span>
+                        </a>
+                        <a class="btn p-0 d-flex align-items-center iq-btn-link iq-btn-read-effect" href="{% url 'shop:product_list' %}">
+                            <span class="iq-button-effact text-primary">
+                             Proceed to Checkout
+                                <i class="fas fa-long-arrow-alt-right text-primary ms-2"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>           
+            
+       
+          {% else %}
+          <div class="col">
+ 
+            
+            <div class="card-body position-relative ms-3">
+          
+           
+               
+                <div class="iq-blog-meta">
+                    <p><strong>Hey {{request.user.first_name }},</a> your shopping Cart is empty </strong></p>
+                   <div class="btn btn-secondary animation-btn">
+                        {{ totail_items }} item {{ totail_items|pluralize }}, KSH {{ cart.get_total_price }} 
+
+                </div>
+            
+                <div class="iq-blog-category"><a href="" class="badge bg-primary"></a></div>
+            </div>
+        <br>
+              
+             
+            </div>
+        </div>           
+     
+      {% endif %}
+  {% endwith %}
+              <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table  table-shopping">
+                      <thead>
+                        <tr>  
+                                <th>Image</th>
+                                <th>Product</th>
+                                <th class="text-right">Unit Price</th>
+                                <th class="text-center">Quantity</th>
+                                <th class="text-right">Amount</th>
+                                <th class="text-right">Remove Item</th>
+                            
+                        </tr>
+                      </thead>
+                      <tbody>
+                            {% for item in cart %}
+                            {% with product=item.product  %}
+                        <tr>
+                          <td>
+                            <div class="img-container">
+                                    <div class="card-header card-header-image">
+                                    <a href="{{ product.get_absolute_url }}">
+                                            <img class="img" src="{% if product.image %} {{ product.image.cdn_url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                                        </a>
+                            </div>
+                        </div>
+                          </td>
+                          <td class="td-name">
+                            <a href="{{ product.get_absolute_url }}"> <strong class="text-muted"> {{ product.name }}</strong></a>
+                            <br />
+                            <!-- <small>by Dolce&Gabbana</small> -->
+                          </td> 
+                     
+                          <td class="td-number text-right">
+                         <strong class="text-muted">KSH {{ item.price }}</strong>
+                          </td>
+                          <td class="td-name">
+                     
+                            <div class="btn-group btn-group-sm">
+                                    <form action="{% url "cart:cart_add" product.id %}" method="post">
+                                            {% csrf_token %}
+                                            {{ item.update_quantity_form.quantity }}
+                                              {{ item.update_quantity_form.update }}
+                                            <input type="submit" value="Update item" class="btn btn-secondary animation-btn" >
+                                        </form>
+                              <!-- <button class="btn btn-round btn-info"> <i class="material-icons">remove</i> </button>
+                              <button class="btn btn-round btn-info"> <i class="material-icons">add</i> </button> -->
+                            </div>
+                          </td>
+                          <td class="td-number">
+                        <strong class="text-muted">KSH {{ item.total_price }}</strong> 
+                          </td>
+                          <td class="td-actions">
+                            <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-link">
+        <a href="{% url "cart:cart_remove" product.id %}"> <i class="fa fa-trash" aria-hidden="true"></i>
+        </a>  
+                            </button>
+                          </td>
+                        </tr>
+                        {% endwith %}
+                        {% endfor %}
+                      
+                        <tr>
+                            {% with totail_items=cart|length %}
+                            {% if cart|length > 0 %}
+                            <td colspan="6">
+                                <div class="d-flex justify-content-between">
+                                    <div class="coupon d-flex justify-content-between">
+                                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Coupon code">
+                                        <div class="iq-btn-container">
+                                            <a class="" href="javascript:void(0)">
+                                                <div class="btn btn-secondary animation-btn">
+                                                        Apply Coupon
+                                                        <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                 
+                                  
+                                  
+                                </div>
+                            </td>
+                           </tr>
+                           {% else %}
+                           <tr>
+                            <td colspan="6">
+                                <a class="btn p-0 d-flex align-items-center iq-btn-link iq-btn-read-effect" href="{% url 'shop:product_list' %}">
+                                    <span class="iq-button-effact text-primary">
+                                    Return to shop
+                                        <i class="fas fa-long-arrow-alt-right text-primary ms-2"></i>
+                                    </span>
+                                </a>
+                            </td>
+                           </tr>
+                           {% endif %}
+                           {% endwith %}
+                           <tr>
+                            <td colspan="6">
+                                <div class="d-flex justify-content-between">
+                                    <div class="coupon d-flex justify-content-between">
+                                        <div class="iq-btn-container">
+
+                                    <h5 class="mb-3"><strong>Subtotal: KSH {{ cart.get_total_price }}</strong></h5> 
+                                    <h5 class="mb-3"><strong>Total: KSH {{ cart.get_total_price }}</strong></h5> 
+
+                                        </div>
+                                    </div>
+                                 
+                                    
+                                  
+                                </div>
+                            </td>
+                           </tr>
+                           {% with totail_items=cart|length %}
+                           {% if cart|length > 0 %}
+                           <td colspan="6">
+                            <div class="d-flex justify-content-between">
+                             
+                                <div class="iq-btn-container">
+                                    <a href="{% url "orders:order_create" %}">
+                                        <div class="btn btn-secondary animation-btn">
+                                             Complete Order
+                                                <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        {% else %}
+                      
+                        <td colspan="6">
+                            <div class="d-flex justify-content-between">
+                             
+                                <div class="iq-btn-container">
+                                    <a href="{% url 'shop:product_list' %}">
+                                        <div class="btn btn-secondary animation-btn">
+                                            Shop 
+                                                <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                        {% endif %}
+                        {% endwith %}
+                        </tr>
+                        <!-- <tr>
+                        <td colspan="6"></td>
+                        <td colspan="2" class="text-right">
+                          <button type="button" class="btn btn-secondary animation-btn">Complete Purchase <i class="material-icons">keyboard_arrow_right</i></button>
+                        </td>
+                      </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+          
+            
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+{% include 'shop/foodstore/footer.html' %}
+
+      </main>
+{% endblock %}

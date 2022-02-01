@@ -19,8 +19,10 @@ AGENCY_JS_LIBRARY_URLS = [
 
 CSS_LIBRARY_URLS  = [
                         " assets/css/libs.min.css",
-                        " assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css",
+                        " assets/vendor/fortawesome/fontawesome-free/css/all.min.css",
                         " assets/css/foodsto.mine209.css?v=1.0.0"
+                        " assets/css/foodsto.mine209.css?v=1.0.0"
+                      
 ]  
 
 JS_LIBRARY_URLS = [

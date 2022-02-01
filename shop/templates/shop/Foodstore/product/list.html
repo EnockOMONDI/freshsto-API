@@ -138,9 +138,9 @@
                    </div>
                    <div class="d-flex justify-content-between mb-3">
                        <div class="iq-btn-container">
-                           <a class="" href="javascript:void(0)" data-alert="sweetalert-product">
+                           <a class="" href="{{ product.get_absolute_url }}" >
                                <div class="btn btn-secondary animation-btn">
-                                   Add To Card
+                                   View
                                    <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
                                </div>
                            </a>
@@ -152,11 +152,7 @@
                                    <i class="far fa-heart"></i>
                                </a>
                            </div>
-                           <div class="iq-product-icon ms-2">
-                               <a href="{{ product.get_absolute_url }}">		
-                               <i class=" fa fa-eye"></i>
-                               </a>
-                           </div>
+                         
                        </div>
                    </div>
                </div>
@@ -192,7 +188,7 @@
   {% endif %}
 </div>
  </div>
-                <div class="d-flex justify-content-center">
+                <!-- <div class="d-flex justify-content-center">
                    <nav aria-label="Page navigation">
                       <ul class="pagination pagination-lg custom-pagination">
                          <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="fas fa-arrow-left"></i></a></li>
@@ -202,7 +198,7 @@
                          <li class="page-item"><a class="page-link" href="javascript:void(0)"><i class="fas fa-arrow-right"></i></a></li>
                       </ul>
                    </nav>
-                </div>
+                </div> -->
              </div>
           </div>
        </div>
@@ -210,95 +206,6 @@
   </div>
 </div>
 
- <footer class="footer bg-soft-primary">
-     <div class="footer-body">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-3 col-md-6 col-sm-6 ">
-                     <div class="footer-logo">
-                         <a href="javascript:void(0)"> 			       
-                             <img class="img-fluid" src="../assets/images/logo.png" alt="foodsto1"> 			
-                         </a>
-                     </div>
-                     <div class="widget mb-4">
-                         <div class="textwidget text-body">
-                             <p>Subscribe to our newsletter and get 10% off your<br>
-                                 first purchase.
-                             </p>
-                         </div>
-                     </div>
-                     <ul class="info-share social-icone d-inline list-inline">
-                         <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-facebook"></i></a></li>
-                         <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-                         <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-                         <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-linkedin"></i></a></li>
-                     </ul>
-                 </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6 mt-4 mt-lg-0 mt-md-0 ">
-                     <div class="widget">
-                         <h5 class="footer-title">Link</h5>
-                         <div class="menu-footer1-container">
-                             <ul id="menu-footer1" class="menu list-inline p-0 m-0">
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>Checkout</a></li>
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>Wishlist</a></li>
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>Shopping Cart</a></li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                     <div class="widget">
-                         <h5 class="footer-title">Information</h5>
-                         <div class="menu-footer2-container">
-                             <ul id="menu-footer2" class="menu list-inline p-0 m-0">
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>Our Team</a></li>
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
-                                 <li class="menu-item"><a href=""><i class="fas fa-chevron-right me-2"></i>Career</a></li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                     <div class="widget">
-                         <h5 class="footer-title ">Quick Contact</h5>
-                         <div class="row">
-                             <div class="col-sm-12">
-                                 <ul class="iq-contact list-inline p-0 m-0">
-                                     <li>
-                                         <a href="javascript:void(0)"><i class="fa fa-home"></i><span>1234 Valley view Nairobi4524 </span></a>
-                                     </li>
-                                     <li>
-                                         <a href="mailto:jondoe@demo.com"><i class="fa fa-envelope"></i><span>info@freshsto.com</span></a>
-                                     </li>
-                                     <li>
-                                         <a href="tel:+0123456789"><i class="fa fa-phone"></i><span >+254726830125</span></a>
-                                     </li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </footer>
- 
- <div class="copyright-footer bg-soft-primary">
-     <div class="container">
-         <div class="pt-3 pb-3">
-             <div class="d-flex justify-content-between">
-                 <span class="copyright">Copyright 2021 FreshSto All Rights Reserved.</span>
-             </div>
-         </div>
-     </div>
- </div>
- 
- <div id="back-to-top" style="">
-     <a class="top" id="top" href="#top"> 
-         <svg width="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <path d="M5 15.5L12 8.5L19 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-         </svg>
-     </a>
- </div>    </main>
+{% include 'shop/foodstore/footer.html' %}
+   </main>
  {% endblock %} 
