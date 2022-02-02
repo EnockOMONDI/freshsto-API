@@ -170,6 +170,22 @@
 
 <div class="section-padding- position-relative">
   <div class="container">
+    <div class="row  ">
+        <div class="col-md-12 ml-auto ">
+                <h4 class="card-title text-center"> <i class="material-icons"> payment</i><small> Secure Foodsto Accepted payment methods</small> </h4>   
+                <ul class="nav flexi-nav justify-content-center" data-tabs="tabs" id="flexiselDemo1">
+                       <li class="nav-item">
+                            <div class='radio' data-value="credit"><img src="../../static/img/m.png " width="200px" height="60px"></div>
+                       </li>
+                       <li class="nav-item">
+                            <div class='radio' data-value="paypal"><img src="../../static/img/p.png" width="200px" height="60px"></div> <br>
+                       </li>
+                </ul>
+          </div>
+
+  
+    </div>
+
       <div class="row">
         
         <div class="col-lg-6">
@@ -177,19 +193,19 @@
             <div class="card"> 
                 <div class="card-body">
             <table class="table table-borderless ">
-                <thead>
+                <!-- <thead>
                     <tr>
                         <th><span class="h5">Product</span></th>
                         <th><span class="h5">Subtotal</span></th>
                     </tr>
-                </thead>
+                </thead> -->
                 <tbody>
                     {% for item in cart %}
                     {% with product=item.product  %}
                        <li class="nav-item">
                                      <div class="text-center " >
                                <div class="card-header card-header-image ">      <img class="img" src="{% if product.image %} {{ product.image.cdn_url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 50px; width: auto"><button class="btn btn btn-white ">  {{ product.name }} <strong>( {{ item.quantity }} )</strong> </button> 
-                                 <button class="btn btn btn-white ">KSH  {{ item.price }} </button>
+                           <button class="btn btn btn-white "> <small>    <b>Unit price :</b>  </small>   KSH  {{ item.price }} </button>
                                </div>
                            </div>
 
@@ -197,42 +213,54 @@
 
                        {% endwith %}
                        {% endfor %}
-                    <tr class="cart_item">
+                       {% with totail_items=cart|length %}
+                       {% if cart|length > 0 %}
+                    <!-- <tr class="cart_item">
                         <td class="ps-3">{{ product.name }}<strong class="product-quantity"><i class="fas fa-times mx-1"></i>1</strong></td>
                         <td class="product-total">
                         <span class= "rowpad"><span class=""> </span> KSH  {{ item.price }}</span></td>
-                    </tr>
+                    </tr> -->
                 </tbody>
                 <tfoot>
                     <tr class="cart-subtotal">
+                        <th><span class="h5">Your Order </span></th>
+                        <td><span class="rowpad"><span class=""></span>{{ totail_items }} item {{ totail_items|pluralize }}</span></td>
+                    </tr>
+                    <!-- <tr class="cart-subtotal">
                         <th><span class="h5">Subtotal</span></th>
                         <td><span class="rowpad"><span class="">$</span>8.00</span></td>
-                    </tr>
+                    </tr> -->
                     <tr class="order-total">
                         <th><span class="h5">Total</span></th>
-                        <td><strong><span class="h5 rowpad">$ 8.00</span></strong> </td>
+                        <td><strong><span class="h5 rowpad">KSH {{ cart.get_total_price }}</span></strong> </td>
                     </tr>
                 </tfoot>
             </table>
+            
+            {% endif %}
+            {% endwith %}
           </div>
         </div>
             <div class="card">
                 <div class="card-header block2 pb-3">
-                    Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.
+                    <p>Your personal data will be used to process your order, support your experience throughout this website.</p>
                 </div>
                 <div class="card-body">
-                    <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our.</p>
+                   
+                      
+                
+                 
                     <div class="iq-btn-container">
-                        <a class="" href="javascript:void(0)">
-                                <div class="btn btn-secondary animation-btn">
-                                    Place Holder
-                                    <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
-                                </div>
-                            </a>
+                        
+                        <button class="btn btn-lg btn-white  "> <a  href="/cart"> MANAGE YOUR CART  <i class="material-icons">
+                            edit
+                            </i> </a></button>
+                    
                     </div>
                 </div>
             </div>
         </div>
+        
       <div class="col-lg-6 mt-5">
     
           <div class="scrolling-text text-center pt-5 position-relative">
@@ -251,52 +279,20 @@
               <h2 class="iq-title">Billing Info</h2>
               <div class="iq-title-divider"></div>
           </div>
-          <form>
-              <div class="row">
-                  <div class="col-md-6 mb-4">
-                      <div class="mb-3">
-                          <input type="text" class="form-control" id="firstName" placeholder="First Name">
-                          <label for="firstName"></label>
-                      </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
-                      <div class="mb-3">
-                          <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-                          <label for="lastName"></label>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 mb-4">
-                      <div class="mb-3">
-                          <input type="email" class="form-control" id="floatingInput" placeholder="Email Address">
-                          <label for="floatingInput"></label>
-                      </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
-                      <div class="mb-3">
-                          <input type="text" class="form-control" id="phoneno" placeholder="Phone">
-                          <label for="phoneno"></label>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-12 mb-4">
-                      <div class="form mb-2" >
-                          <label for="message" class="form-label"></label>
-                          <textarea class="form-control" id="message" rows="5"  placeholder="Message"></textarea>
-                      </div>
-                  </div>
-              </div>
-              <div class="iq-btn-container">
-                  <a class="" href="javascript:void(0)">
-                      <div class="btn btn-secondary animation-btn">
-                              Send
-                              <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
-                      </div>
-                  </a>
-              </div>
-          </form>
+          <form style="margin:10%;margin-top:0;font-size:15px;"action="." method="post">
+            {% csrf_token %}
+            {{ form.as_p }}<br>
+            <div class="social-btn" >
+                    {% if cart|length > 0 %}
+            <input type="submit" class="btn btn-primary btn-lg" value="Proceed to payment">             
+        </div>
+        </form>
+        {% else %}
+          
+        <h4>  <button class="btn btn-white btn-lg "> <a  href="{% url 'shop:product_list' %}" > Shop now </a></button>    </h4>            
+
+
+         {% endif %}
     
       </div>
   </div>
@@ -332,90 +328,8 @@
     </div>
 </div>
 </div>
+{% include 'shop/foodstore/footer.html' %}
 
-    <footer class="footer bg-soft-primary">
-        <div class="footer-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 ">
-                        <div class="footer-logo">
-                            <a href="javascript:void(0)"> 			       
-                                <img class="img-fluid" src="assets/images/logo.png" alt="foodsto1"> 			
-                            </a>
-                        </div>
-                        <div class="widget mb-4">
-                            <div class="textwidget text-body">
-                                <p>Subscribe to our newsletter and get 10% off your<br>
-                                    first purchase.
-                                </p>
-                            </div>
-                        </div>
-                        <ul class="info-share social-icone d-inline list-inline">
-                            <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0)"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 mt-4 mt-lg-0 mt-md-0 ">
-                        <div class="widget">
-                            <h5 class="footer-title">Link</h5>
-                            <div class="menu-footer1-container">
-                                <ul id="menu-footer1" class="menu list-inline p-0 m-0">
-                                    <li class="menu-item"><a href="checkout.html"><i class="fas fa-chevron-right me-2"></i>Checkout</a></li>
-                                    <li class="menu-item"><a href="wishlist.html"><i class="fas fa-chevron-right me-2"></i>Wishlist</a></li>
-                                    <li class="menu-item"><a href="cart.html"><i class="fas fa-chevron-right me-2"></i>Shopping Cart</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                        <div class="widget">
-                            <h5 class="footer-title">Information</h5>
-                            <div class="menu-footer2-container">
-                                <ul id="menu-footer2" class="menu list-inline p-0 m-0">
-                                    <li class="menu-item"><a href="about-us.html"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
-                                    <li class="menu-item"><a href="our-team.html"><i class="fas fa-chevron-right me-2"></i>Our Team</a></li>
-                                    <li class="menu-item"><a href="contact-us.html"><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
-                                    <li class="menu-item"><a href="blog/left-sidebar-blog.html"><i class="fas fa-chevron-right me-2"></i>Blog</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-                        <div class="widget">
-                            <h5 class="footer-title ">Quick Contact</h5>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <ul class="iq-contact list-inline p-0 m-0">
-                                        <li>
-                                            <a href="javascript:void(0)"><i class="fa fa-home"></i><span>1234 North Avenue Luke Lane, South Bend, IN 360001</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="mailto:jondoe@demo.com"><i class="fa fa-envelope"></i><span>jondoe@demo.com</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="tel:+0123456789"><i class="fa fa-phone"></i><span >+0123456789</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <div class="copyright-footer bg-soft-primary">
-        <div class="container">
-            <div class="pt-3 pb-3">
-                <div class="d-flex justify-content-between">
-                    <span class="copyright">Copyright 2021 foodsto All Rights Reserved.</span>
-                </div>
-            </div>
-        </div>
-    </div>
     
     <div id="back-to-top" style="">
         <a class="top" id="top" href="#top"> 
@@ -424,273 +338,6 @@
             </svg>
         </a>
     </div>    </main>
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-12 col-lg-10 col-xl-10">
-              
-            <div class="row">
-                <div class="col-md-6 d-block p-0 box">
-                        <div class="col-lg-11 p-2 bg-white rounded shadow-sm ">
-                        <div class="row justify-content-center">
-                            <div class="col-11">
-                                    <h3 class="card-title text-center">Your order details</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-md-12 ml-auto ">
-                                        <ul class="nav flexi-nav justify-content-center" data-tabs="tabs" id="flexiselDemo1">
-
-                                        {% for item in cart %}
-                                        {% with product=item.product  %}
-                                           <li class="nav-item">
-                                                         <div class="text-center " >
-                                                   <div class="card-header card-header-image ">      <img class="img" src="{% if product.image %} {{ product.image.cdn_url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 50px; width: auto"><button class="btn btn btn-white ">  {{ product.name }} <strong>( {{ item.quantity }} )</strong> </button> 
-                                                     <button class="btn btn btn-white ">KSH  {{ item.price }} </button>
-                                                   </div>
-                                               </div>
-
-                                           </li>
-    
-                                           {% endwith %}
-                                           {% endfor %}
-                                        {% with totail_items=cart|length %}
-                                        {% if cart|length > 0 %}
-                                            <li class="nav-item">
-                                                    <h4>       <i class="material-icons">check_circle</i> <strong> Your Order</strong>  <button class="btn btn btn-white ">  {{ totail_items }} item {{ totail_items|pluralize }}</button>     </h4>       
-                                               </li>
-                                               <li class="nav-item">
-                                                    <h4>   <i class="material-icons">check_circle</i> <strong>Subtotal  </strong>  <button class="btn btn btn-white ">   KSH {{ cart.get_total_price }}</button> </h4>
-                                              
-                                               </li>
-                                               {% else %}
-                                               <li class="nav-item">
-                                              <h4>   <strong>Bummer!Your cart is Empty</strong>  <button class="btn btn-white btn-lg "> <a  href="{% url 'shop:product_list' %}" > Shop now </a></button>    </h4>            
-
-                                            </li>
-                                               {% endif %}
-                                               {% endwith %}
-                                            
-                                           
-                                            
-                                            </ul>
-                                  </div>
-
-                         </div>
-                         <hr>
-                  
-                        <div class="row justify-content-center">
-                            
-                                        <div class="col-12 ">
-                                                <h3   class="card-title text-center">Jadili Mall Secure Checkout <i class="material-icons"> thumb_up_alt</i>  </h3>
-                                        </div>
-                                    
-                            <div class="col-5 fit-image"> <img src="../../static/img/curr.png "height="200px" width="200"> </div>
-                   
-                       
-                           
-                        </div>
-                        <div class="row  ">
-                                <div class="col-md-12 ml-auto ">
-                                        <h4 class="card-title text-center"> <i class="material-icons"> payment</i><small> Secure Jadili Mall Accepted payment methods</small> </h4>   
-                                        <ul class="nav flexi-nav justify-content-center" data-tabs="tabs" id="flexiselDemo1">
-                                               <li class="nav-item">
-                                                    <div class='radio' data-value="credit"><img src="../../static/img/m.png " width="200px" height="60px"></div>
-                                               </li>
-                                               <li class="nav-item">
-                                                    <div class='radio' data-value="paypal"><img src="../../static/img/p.png" width="200px" height="60px"></div> <br>
-                                               </li>
-                                        </ul>
-                                  </div>
-
-                          
-                            </div>
-                            <div class="row  text-center">
-                            <div class="col-md-12 ml-auto ">
-                            <button class="btn btn-lg btn-white  "> <a  href="/cart"> <i class="material-icons">
-                                    edit
-                                    </i> MANAGE YOUR CART </a></button>
-                        </div>
-                        <div class="col-12 ">
-                        </div>
-                    </div>
-                </div>
-               
-                </div>
-
-                <hr>
-                <div class="col-md-6 d-block p-0 box">
-                        <div class="col-lg-11 p-2 bg-white rounded shadow-sm ">              
-                                <div class="row justify-content-center">
-                                        <div class="col-11">
-                                            <br>
-                                                <div class="row justify-content-center">
-                                                <i class="material-icons " >local_shipping </i>
-                                               </div>
-                                                <h3  class="card-title text-center">        <strong>Enter your Delivery Address Details</strong></h3>
-                                                <!-- <h4  class="card-title text-center">
-                                                       </h3> -->
-                                                <div class="form-card p-4 pl-5">
-                                                        <!-- <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="row">
-                                                                    <div class="col-12"> <label class="gift">First name</label> </div>
-                                                                    <div class="col-12"> <input class="gift-input" type="text" name="to" placeholder=""> </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="row">
-                                                                    <div class="col-12"> <label class="gift">Second Name</label> </div>
-                                                                    <div class="col-12"> <input class="gift-input" type="text" name="from" placeholder=""> </div>
-                                                                </div>
-                                                            </div>
-                                                        </div> -->
-                                                        <!-- <div class="row">
-                                                            <div class="col-12"> <label class="gift">Your email</label><br> <input class="gift-input" type="email" name="email" placeholder="example@mail.com"> </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12"> <label class="gift">Mobile number</label><br> <input class="gift-input" type="text" name="msg" placeholder=""> </div>
-                                                        </div> -->
-                                                        <!-- <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-12"> <label class="gift">County</label> </div>
-                                                                        <div class="col-12"> <input class="gift-input" type="text" name="to" placeholder=""> </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="row">
-                                                                        <div class="col-12"> <label class="gift">Area/Region</label> </div>
-                                                                        <div class="col-12"> <input class="gift-input" type="text" name="from" placeholder=""> </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div> -->
-                                                            <!-- <div class="row">
-                                                                    <div class="col-12"> <label class="gift">Delivery Address/House No /App No</label><br> <input class="gift-input" type="text" name="msg" placeholder="Try to be as accurate as possible"> </div>
-                                                                </div> -->
-                                                                <!-- <div class="col-12 text-center">
-                                                                        <select class="selectpicker" data-style="select-with-transition" multiple title="Choose Method" data-size="7">
-                                                                          <option disabled> Choose Method</option>
-                                                                          <option value="2"> Jadili XP (Same day delivery) </option>
-                                                                          <option value="3">Jadili DELI (Two - Three days) </option>
-                                                                        
-                                                                        </select>
-                                        
-                                                                      </div>  -->
-                                                                      <!-- <div class="social-btn" >
-                                                                            <input type="submit" class="btn btn-primary btn-lg" value="Proceed to payment">
-                                                                       </div> -->
-                                                                       <form style="margin:10%;margin-top:0;font-size:15px;"action="." method="post">
-                                                                            {% csrf_token %}
-                                                                            {{ form.as_p }}<br>
-                                                                            <div class="social-btn" >
-                                                                                    {% if cart|length > 0 %}
-                                                                            <input type="submit" class="btn btn-primary btn-lg" value="Proceed to payment">             
-                                                                        </div>
-                                                                        </form>
-                                                                        {% else %}
-                                                                          
-                                                                        <h4>  <button class="btn btn-white btn-lg "> <a  href="{% url 'shop:product_list' %}" > Shop now </a></button>    </h4>            
-                          
-                                                                
-                                                                         {% endif %}
-                                                                         
-                                                                    </div>
-                                        </div>
-                                    </div>
-                        </div>
-                 </div>
-                </div>
-<!-- end of first row -->
-
-      
-
-
-                        
-                 </div>
-                 </div>
-                 </div>
-
-      <div class="features text-center">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-info">
-                     
-                        <i class="material-icons">timer</i>
-                  </div>
-                  <h4 class="info-title">Jadili XP delivery </h4>
-                  <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                </div>
-              </div>
-         
-              <div class="col-md-4">
-                <div class="info">
-                  
-                  <div class="icon icon-info">
-                    <i class="material-icons">local_shipping</i>
-                  </div>
-                  <h4 class="info-title">Jadili DELI delivery</h4>
-                  <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                    <div class="info">
-                      <div class="icon icon-info">
-                            <i class="material-icons">account_balance_wallet</i>
-                      </div>
-                      <h4 class="info-title">Refund Policy</h4>
-                      <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                    </div>
-                  </div>
-            </div>
-          </div>
-
-    </div>
-  </div>
-
-
-  <div class="px-4 px-lg-0">
- 
-      <div class="pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-                  <div class="copyright text-center">
-                          Copyright &#xA9;
-                          <script>
-                            document.write(new Date().getFullYear())
-                          </script> Jadili Mall powered by    <a href="http://www.brainlabs.co.ke" target="_blank">Brain labs Kenya</a> 
-                        </div>
-
-                 <!-- <div class="container-fluid">
-                        <div class="row justify-content-center">
-                                <div class="col-12 col-sm-10 col-md-12 col-lg-10 col-xl-10"> 
-                                        <div class="row">
-                                                <div class="col-md-6 col-sm-12 p-0 box">
-                                                        <div class="col-lg-11 p-2 bg-white rounded shadow-sm ">
-                                                              <div class="row">
-                                                              
-                                                              </div>
-                                                  
-                                                        </div>
-                                                  </div>
-                                                  <div class="col-md-6 col-sm-12 p-0 box">
-                                                        <div class="col-lg-11 p-2 bg-white rounded shadow-sm ">
-                                                              <div class="row">
-                                                             
-                                                              </div>
-                                                  
-                                                        </div>
-                                                  </div>
-                                          </div>
-
-                                
-
-                                  </div>
-                            </div>
-                    </div> -->
-
-
 
 
 

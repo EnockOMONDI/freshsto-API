@@ -4,19 +4,53 @@ from django.core.validators import MinValueValidator, \
 from shop.models import Product
 from account.models import Client
 
+COUNTY_CATEGORY_TYPES = (
+('Nairobi', 'Nairobi'),
+('Lesotho', 'Lesotho'),
+('Liberia', 'Liberia'),
+('Libya', 'Libya'),
+('Madagascar', 'Madagascar'),
+('Malawi', 'Malawi'),
+('Mali', 'Mali'),
+('Mauritania', 'Mauritania'),
+('Mauritius', 'Mauritius'),
+('Morocco', 'Morocco'),
+('Mozambique', 'Mozambique'),
 
+)
+TOWN_CATEGORY_TYPES = (
+('Utawala','Utawala'),
+('Niger', 'Niger'),
+('Nigeria', 'Nigeria'),
+('Rwanda', 'Rwanda'),
+('Sao Tome and Principe', 'Sao Tome and Principe'),
+('Senegal', 'Senegal'),
+('Seychelles', 'Seychelles'),
+('Sierra Leone', 'Sierra Leone'),
+('Somalia', 'Somalia'),
+('South Africa', 'South Africa'),
+('South Sudan', 'South Sudan'),
+('Sudan', 'Sudan'),
+('Tanzania', 'Tanzania'),
+('Togo', 'Togo'),
+('Tunisia', 'Tunisia'),
+('Uganda', 'Uganda' ),
+('Zambia', 'Zambia' )
+)
 class Order(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField()
-    address = models.CharField(max_length=150)
-    postal_code = models.CharField(max_length=30)
-    city = models.CharField(max_length=100)
+    house_number = models.CharField(max_length=150)
+    street_name = models.CharField(max_length=150)
+    area = models.CharField(max_length=127, choices=TOWN_CATEGORY_TYPES ,  blank=True,null=True,  default='Utawala')
+    location =  models.CharField(max_length=127, choices=COUNTY_CATEGORY_TYPES,  blank=True,null=True,  default='Nairobi')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
     discount = models.PositiveIntegerField(default=0)
-
+    phone = models.CharField(max_length=30)
+          
     class Meta:
         ordering = ('-created', )
 

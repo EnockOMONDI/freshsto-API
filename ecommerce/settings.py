@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'login',
     'account',
     'captcha'
+ 
+
   
 ]
 
@@ -68,7 +70,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+  
 ROOT_URLCONF = 'ecommerce.urls'
 
 TEMPLATES = [
