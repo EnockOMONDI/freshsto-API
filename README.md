@@ -11,32 +11,51 @@
 (Ubuntu Development Only) 
 ### Relational database dependencies (PostgreSQL):
 #### Install components for Ubuntu:
-sudo apt-get update
-sudo apt-get install python-dev libpq-dev postgresql postgresql-contrib
+```commandline
+ sudo apt-get update
+```
+```commandline
+ sudo apt-get install python-dev libpq-dev postgresql postgresql-contrib
+```
 
 ##### Switch to postgres (PostgreSQL administrative user):
-sudo su postgres
-
+```commandline
+ sudo su postgres
+```
 ##### Log into a Postgres session:
-psql
+
+```commandline
+ psql
+```
 
 ##### Create database with name ecommerce:
-CREATE DATABASE ecommerce;
-
+```commandline
+ CREATE DATABASE ecommerce;
+```
 ##### Create a database user which we will use to connect to the database:
-CREATE USER ecommerce_user WITH PASSWORD 'ecommerce_pass';
-
+```commandline
+ CREATE USER ecommerce_user WITH PASSWORD 'ecommerce_pass';
+```
 ##### Modify a few of the connection parameters for the user we just created:
-ALTER ROLE ecommerce_user SET client_encoding TO 'utf8';
-ALTER ROLE ecommerce_user SET default_transaction_isolation TO 'read committed';
-ALTER ROLE ecommerce_user SET timezone TO 'UTC';
+```commandline
+ ALTER ROLE ecommerce_user SET client_encoding TO 'utf8';
+```
+```commandline
+ ALTER ROLE ecommerce_user SET default_transaction_isolation TO 'read committed';
+```
+```commandline
+ ALTER ROLE ecommerce_user SET timezone TO 'UTC';
+```
+
 
 ##### Give our database user access rights to the database we created:
-GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce_user;
-
+```commandline
+GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce_user; 
+```
 ##### Exit the SQL prompt and the postgres user's shell session:
-\q then exit
-
+```commandline
+ \q then exit
+```
 ## Quickstart
 
 If you want to have a quick look or just run the project locally for development purposes, you can get started by either forking this repository
