@@ -5,10 +5,10 @@
 # Technical documentation Fresh sto web app 
 #### This is an onlineshop application that allows different users to view items on sale and make an order online. Admins are able to view orders made and process orders
 
-#### By ****Enock OMONDI****
+
 
 # SET UP Requirements
-## Relational database dependencies (PostgreSQL):
+### Relational database dependencies (PostgreSQL):
 #### Install components for Ubuntu:
 sudo apt-get update
 sudo apt-get install python-dev libpq-dev postgresql postgresql-contrib
@@ -36,6 +36,35 @@ GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce_user;
 ##### Exit the SQL prompt and the postgres user's shell session:
 \q then exit
 
+## Quickstart
+
+If you want to have a quick look or just run the project locally, you can get started by either forking this repository
+or just cloning it directly:
+
+```commandline
+git clone 
+```
+
+Ideally, create a [virtualenv](https://docs.python-guide.org/dev/virtualenvs/) and install the projects dependencies:
+
+```commandline
+pip install -r requirements.txt
+```
+
+Create a local database:
+
+```commandline
+python manage.py migrate
+```
+
+Start development server:
+
+```commandline
+python manage.py runserver
+```
+
+Open your browser and access the setup page to create an admin account:
+
 ##### Activate the virtual environment:
 source ~/.virtualenvs/ecommerce/bin/activate
 
@@ -43,12 +72,18 @@ source ~/.virtualenvs/ecommerce/bin/activate
 python manage.py makemigrations
 python manage.py migrate
 
+Start development server:
+
+```commandline
+python manage.py runserver
+```
+
 #### Use admin interface:
 ##### Create an admin user:
-python manage.py dosuperuser
-Run the project locally:
-python manage.py runserver
-Navigate to:
+python manage.py dosuperuser 
+* Run the project locally:
+python manage.py runserver 
+* Navigate to:
 http://localhost:8000/admin/
 
 ## How to use as a user
