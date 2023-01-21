@@ -7,7 +7,8 @@
 
 
 
-# SET UP Requirements
+# SET UP 
+(Ubuntu Development Only) 
 ### Relational database dependencies (PostgreSQL):
 #### Install components for Ubuntu:
 sudo apt-get update
@@ -38,7 +39,7 @@ GRANT ALL PRIVILEGES ON DATABASE ecommerce TO ecommerce_user;
 
 ## Quickstart
 
-If you want to have a quick look or just run the project locally, you can get started by either forking this repository
+If you want to have a quick look or just run the project locally for development purposes, you can get started by either forking this repository
 or just cloning it directly:
 
 ```commandline
@@ -47,11 +48,22 @@ git clone
 
 Ideally, create a [virtualenv](https://docs.python-guide.org/dev/virtualenvs/) and install the projects dependencies:
 
+ Activate the virtual environment:
+ 
+```commandline
+source ~/.virtualenvs/ecommerce/bin/activate
+```
+
 ```commandline
 pip install -r requirements.txt
 ```
 
 Create a local database:
+
+
+```commandline
+python manage.py makemigrations
+```
 
 ```commandline
 python manage.py migrate
@@ -64,41 +76,27 @@ python manage.py runserver
 ```
 
 Open your browser and access the setup page to create an admin account:
+site - link [here](http://localhost:8000/admin/)
 
-##### Activate the virtual environment:
-source ~/.virtualenvs/ecommerce/bin/activate
 
-##### Make Django database migrations: 
-python manage.py makemigrations
-python manage.py migrate
 
-Start development server:
 
-```commandline
-python manage.py runserver
-```
 
-#### Use admin interface:
-##### Create an admin user:
-python manage.py dosuperuser 
-* Run the project locally:
-python manage.py runserver 
-* Navigate to:
-http://localhost:8000/admin/
+
 
 ## How to use as a user
-* Open the site - link [here]()
+* Open the site - link [here](http://localhost:8000/)
 * Create an account if you are new or login to application
 * Search for different items 
 * Click on desired Item to view
 * add to cart and submit to make an order
 
 ## How to use as admin
-* Open the site - link [here]()
+* Open the site - link [here](http://localhost:8000/admin/)
 * login to application
 * Search for different orders made
 * Click on desired Item order to process
-* 
+ 
 
 
 ## Technologies used
