@@ -135,8 +135,9 @@ def home(request, category_slug=None, subcategory_slug=None, minicategory_slug=N
         'subcategory': subcategory,
         'minicategory': minicategory,
     }
+    # return render(request, 'shop/foodstore/homepage/index.html',   context={
 
-    return render(request, 'shop/foodstore/homepage/index.html',   context={
+    return render(request, 'shop/foodstore/index.html',   context={
         'category': category,
         'categories': categories,
         'products': products,
