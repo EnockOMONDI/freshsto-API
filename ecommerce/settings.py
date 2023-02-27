@@ -63,6 +63,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -172,9 +173,7 @@ SESSION_COOKIE_HTTPONLY = True
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage' 
-
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
