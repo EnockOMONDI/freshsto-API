@@ -12,7 +12,7 @@
     <title>{% block title %}FreshSto| Organic Grocery & Fruits {% endblock %}</title>  <!--Curio On-line -->
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <link rel="shortcut icon" type="image/png" href="{% static 'images/u.png' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.ico' %}"/>
     <!-- <link type="text/css" rel="stylesheet" href="https://bbbootstrap.com/assets/css/reset.css">
     <link type="text/css" rel="stylesheet" href="https://bbbootstrap.com/assets/css/plugins.css">
     <link type="text/css" rel="stylesheet" href="https://bbbootstrap.com/assets/css/style.css?version=10.3">
@@ -23,6 +23,8 @@
  -->
 
   
+<script src="https://use.fontawesome.com/d97aab4e53.js"></script>
+
     <script src="https://bbbootstrap.com/assets/js/notify.js?v=1"></script>
     <script src="https://bbbootstrap.com/assets/js/imgur.js?v=1"></script>
 
@@ -47,6 +49,8 @@
       <div class="loader simple-loader">
           <div class="loader-body"></div>
       </div>    </div>
+      {% include 'shop/navbar.html' %}
+    {% csrf_token %}
 {% block content %}
 
 
