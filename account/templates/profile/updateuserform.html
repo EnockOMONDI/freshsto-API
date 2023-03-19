@@ -1,0 +1,163 @@
+
+    <style>
+      div.fileinputs {
+	position: relative;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+    </style>
+
+<div class="container" >
+<form  action=""  method="POST" enctype="multipart/form-data" name="profile_form" id="profile_form">
+    {% csrf_token %}
+          <div class="row ">
+           
+          
+                  <br>
+            <div class="col-lg-12 " >
+                <div  class="row justify-content-center">
+             
+                  <div class="col-lg-6">
+          
+                    <div class="form-group">
+                      <label>Username</label>
+                      <input style="box-shadow: 2px 4px 13px -1px rgba(255,102,13,0.16);" type="text" name="username" class="form-control" placeholder="(eg  alwayzhungry)" min="0" required="" id="id_username" >
+                    </div>
+                  </div>
+           
+            
+              <div class="col-lg-6 ">
+                
+                <div class="iq-btn-container " id="banner-action">
+                
+                  <div class="form-group">
+                    <label>Profile Pic</label>
+                    <input type="file" class="form-control" id="id_profile_pic" name="profile_pic"   class="file" onchange="loadFile(event)">
+                  </div>
+                 
+    
+                
+             
+                </div>
+<!--           
+                <span class="btn btn-primary btn-file">
+                    <span class="fileinput-new">Upload Profile pic</span>
+                 
+                    <input id="id_profile_pic" name="profile_pic" type="file" onchange="loadFile(event)">
+      
+                  </span> -->
+                      <!-- <input
+                       type="hidden" 
+                       name="profile_pic"
+                       role="uploadcare-uploader"
+                       data-crop="4:4"
+                       data-clearable=""
+                       data-image-shrink="1024x1024"
+                       data-images-only="true" 
+                       id="id_profile_pic" 
+                       value=""/> -->
+
+                      <!-- <input  name="profile_pic" type="file" onchange="loadFile(event)"> -->
+        
+               
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 " >
+              <div  class="row justify-content-center">
+               
+              
+                <div class="col-lg-6 ">
+            
+                  <div class="form-group" >
+                    <label>County</label>
+              <div style="box-shadow: 2px 4px 13px -1px rgba(255,102,13,0.16);">
+          {{ profile_form.county}}
+                 </div>
+                                   
+                     </div>
+                </div>
+                <div class="col-lg-6 ">
+          
+                  <div class="form-group">
+                    <label>Area Landmark</label>
+                    <input style="box-shadow: 2px 4px 13px -1px rgba(255,102,13,0.16);" type="text" name="area_name" class="form-control" placeholder="Area Landmark (eg Green Shopping mall )" min="0" required="" id="id_area_name">
+                  </div>
+                </div>
+                </div>
+              </div>
+            <div class="col-lg-12 " >
+              <div  class="row justify-content-center">
+               
+              
+                <div class="col-lg-6 ">
+                  <div class="form-group">
+                    <label>Apartment</label>
+                    <input style="box-shadow: 2px 4px 13px -1px rgba(255,102,13,0.16);" type="text" name="apartment" class="form-control" placeholder="Apartment name (eg Green Apartments )" min="0" required="" id="id_apartment">
+                  </div>
+                
+                </div>
+                <div class="col-lg-6 ">
+          
+               
+                  <div class="form-group">
+                    <label>House No</label>
+                    <input style="box-shadow: 2px 4px 13px -1px rgba(255,102,13,0.16);" type="text" name="house_no" class="form-control" placeholder="Your house Number " min="0" required="" id="id_house_no">
+                  </div>
+                </div>
+                </div>
+              </div>
+            
+              <div class="col-lg-12 " >
+                <div  class="row justify-content-center">
+                  <div class="col-lg-6 ">
+                    <div class="form-group">
+                      <label>Phone</label>
+                      <input style="box-shadow: 2px 4px 13px -1px rgba(255,102,13,0.16);" type="number" name="phone_number" class="form-control" placeholder="phone number (eg +254xxxxxxx)" min="0" required="" id="id_phone_number">
+                    </div>
+                  </div>
+                 
+                  <div class="col-lg-6 ">
+                
+                    <div class="iq-btn-container containerbtn mt-3">
+                        
+                      <button style="color: #ffffff;" type="submit" class="btn btn-secondary btn-lg"  accept="image/*">Create Profile</button>
+                    </div>
+                   
+                  </div>
+                  </div>
+                </div>
+          
+          
+         
+         
+        
+            <div class="col-lg-12">
+               
+                
+      
+            
+            <div class="col-lg-12 " >
+            
+            
+                    </div>
+              </div>
+        
+          </div>
+        </div>    
+  

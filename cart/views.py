@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from shop.models import Product
+from django.conf import settings
 from .cart import Cart
 from .forms import CartAddProductForm
 
@@ -29,15 +30,6 @@ def cart_detail(request):
         item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 'update': True})
     return render(request, 'cart/cartdetail.html', {
         'cart': cart,
-                'local_css_urls': [ "assets/css/libs.min.css",
-                            "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
-                            "assets/css/foodsto.mine209.css?v=1.0.0"],
-                 'local_js_urls':  [
-                            "assets/js/libs.min.js",
-                            "assets/vendor/gsap/gsap.min.js",
-                            "assets/vendor/gsap/ScrollTrigger.min.js",
-                            "assets/js/app.js",
-                            "assets/js/gsap.js",
-                            "assets/js/slider.js"]
-
-  })
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })

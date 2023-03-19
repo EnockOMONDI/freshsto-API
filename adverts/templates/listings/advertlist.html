@@ -1,0 +1,197 @@
+{% extends 'base/advertbase.html' %}
+{% load static %}
+{% block content %}
+{% block title %} YUMI | Ads List {% endblock %}
+
+
+
+  <!-- Main container Start -->  
+  <div class="main-container">
+    <div class="container">
+  
+            
+           
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-xs-12 page-sidebar">
+          <aside>
+            <div class="inner-box">
+              <div class="categories">
+                <div class="widget-title">
+                  <i class="fas fa-align-justify"></i>
+                  <h4>Categories</h4>
+                </div>
+                <div class="categories-list">
+                  <ul>
+                      {% if categories  %}
+                      {% for c in categories %}
+                    <li>
+                      <a href="{{ c.get_absolute_url }}">
+                        <i class="fas fa-desktop"></i>
+                        {{ c.name }} <span class="category-counter">( {{c.adverts_in_category}} ) </span>
+                      </a>
+                    </li>
+                  </li>
+                      {% endfor %}
+                        {%else %}
+                        <li>
+                            <a href="#">
+                              <i class="lnr lnr-sad"></i>
+                             No Categories found Currently <span class="category-counter">(0)</span>
+                            </a>
+                       
+                        {% endif %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+       
+            <div class="inner-box">
+              <div class="widget-title">
+                <h4>Premium Ads</h4>
+              </div>
+              <div class="advimg">
+                <ul class="featured-list">
+                  <li>
+                    <img alt="" src="assets/img/pel.jpg">
+                    <div class="hover">
+                      <a href="#"><span>KSH 49</span></a>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" src="assets/img/pel.jpg">
+                    <div class="hover">
+                      <a href="#"><span>KSH 49</span></a>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" src="assets/img/pel.jpg">
+                    <div class="hover">
+                      <a href="#"><span>KSH 49</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="widget-title">
+                <h4>Advertisement</h4>
+              </div>
+              <img src="assets/img/img1.jpg" alt="">
+            </div>
+          </aside>
+        </div>
+
+        <div class="col-lg-9 col-md-12 col-xs-12 page-content">
+          <!-- Product filter Start -->
+          
+          <div class="product-filter">
+       
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                 
+                  <div class="row justify-content-center "  >
+                     
+                         
+                      <div class="col-lg-4">
+                         
+                              <div class="form-group">
+                                <input type="text" name="customword" class="form-control" placeholder="Search Products">
+                              </div>
+                          </div>
+  
+                          <div class="col-lg-3">
+                              <select class="browser-default custom-select">
+                                          {% if categories  %}
+                                        {% for c in categories %}
+                                        <option value="none">{{c.name}}</option>
+                                        {% endfor %}
+                                        {%else %}
+                                        <option value="none">No Categories found</option>
+                                        {% endif %}
+                                      
+                                      </select>
+                                   
+                                    </div>  
+                              
+                              <div class="col-lg-3  ">
+                            
+                               
+                                    <select class="browser-default custom-select">
+                                            {% if categories  %}
+                                          {% for c in categories %}
+                                          <option value="none">{{c.name}}</option>
+                                          {% endfor %}
+                                          {%else %}
+                                          <option value="none">No Categories found</option>
+                                          {% endif %}
+                                        </select>
+                                      
+                                      </div>
+                                      <br>
+                                      <div class="col-lg-3  ">
+                                      <button class="btn btn-common " type="button"><i class="lni-search"></i> Search Now</button>
+  
+                                    </div>
+                      </div>
+                 
+                  </div>
+           
+         <br>
+      
+            <div class="grid-list-count">
+              <a class="list switchToGrid" href="#"><i class="fas fa-list"></i></a>
+              <a class="grid switchToList" href="#"><i class="fas fa-th-large"></i></a>
+            </div>
+          </div> 
+          <div class="col-lg-12 col-md-12 col-sm-12 ml-auto mr-auto ">
+              <div class="container ">
+              <div class="row "  >
+                <!-- style=" padding-left:4px; padding-right:4px;" -->
+                {% if categories  %}
+                {% for c in categories %}
+                <a class=" btn-sm btn-white  " style="color:#f3750e; border: 1px solid #ddd;" href="{{ c.get_absolute_url }}" > {{ c.name }}</a>
+        
+            
+                {% endfor %}
+                {%else %}
+               <strong>Categories: </strong> <a class=" btn-sm btn-white  " style="color:#f3750e; border: 1px solid #ddd;" href="#" > Bummer, there are currently no Ad Categories on site</a>
+              
+                
+                
+                {%endif%}
+             
+                </div>		
+              </div>
+          
+        
+            
+            </div>
+   
+       
+          <!-- Product filter End -->
+        
+          <!-- Adds wrapper Start -->
+          <div class="adds-wrapper">
+    
+       
+                    {% include "listings/adsobjects.html" %}
+
+        
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Main container End --> 
+   <!-- Search wrapper Start -->
+
+     
+     
+   <!-- Footer Section Start -->
+<!--  -->
+{% include "base/js.html"  %}}
+  <div id="ajax_response_login"></div>
+  <div id="ajax_response_register"></div>
+  <div id="ajax_logout"></div>
+  <div id="fb-root"></div>
+{% endblock content %}

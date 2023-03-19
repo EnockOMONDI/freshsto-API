@@ -1,0 +1,111 @@
+{% extends 'shop/base_3.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="banner section-padding-120 pb-0" id="home-1">
+    <!-- <div class="slider-image" id="banner-slider-image" style="transform: translate(2.21px, 3.08px);">
+      <div class="slider-2" style="transform: rotate(135deg); opacity: 1;"></div>
+      <div class="slider-3" style="transform: rotate(-49.9997deg); opacity: 1;"></div>
+      <div class="slider-4" style="transform: rotate(20deg) scale(1, -1); opacity: 1;"></div>
+      <div class="slider-5" style="transform: translate(0px, 0px); opacity: 1;"></div>
+      <div class="slider-6" style="transform: translate(0px, 0px); opacity: 1;"></div>
+      <div class="slider-text" style="transform: translate(0px, 0px); opacity: 1;">
+        <div class="scrolling-text vertical-scroll text-center">
+          <div>Organic</div>
+        </div>
+      </div>
+    </div> -->
+    <section class="about-us  pb-0 position-relative">
+           <div class="container">
+              <div class="row">
+                 <div class="col-lg-5">
+                    <div class="scrolling-text text-center mb-5" >
+                       <div data-iq-gsap="onStart" data-iq-opacity="1" data-iq-position-x="200" data-iq-trigger="scroll" data-iq-scroll-scrub="true" data-iq-ease="power.inOut" style="transform: translate3d(90.6666px, 0px, 0px); opacity: 1;">
+                        {{ request.user.first_name  }}
+                       </div>
+                    </div>
+                    <div class="mt-4" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+                       <div class="iq-title-box mb-2" style="font-family: 'Circular Book', sans-serif; font-weight: 700;">
+                          
+                          <h2 class="iq-title">Get groceries at unbeatable prices</h2> <br>
+                          <span class="iq-subtitle">Up to 80% Off</span>
+                          <div class="iq-title-divider"></div>
+                       </div>
+                       <p class="mb-0" style="font-family: 'Circular Book', sans-serif; font-weight: 500;">
+                        welcome to Food for Less! We're thrilled to be your trusted source for nutritious, delicious groceries. Our focus 
+                        on value, and convenience means you'll always find what you need, right when you need it. Thanks for choosing us!                </p>
+                      
+                    </div>
+                 </div>
+                 <div class="col-lg-7">
+                    <div class="container">
+                        <!-- <div class=" align-self-center">
+                            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+        
+        
+                            <lottie-player src="https://lottie.host/be74f6b1-a3ed-4b8d-9982-0c06f4ddba3d/xR9YYLlpps.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player> 
+                        </div> -->
+                    <div class="row">
+                        <div class="col-lg-6 position-relative">
+                            <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+                               <div class="iq-product-offer-block overflow-hidden rounded position-relative">
+                                  <div class="iq-offer-img">
+                                     <div class="iq-offer-back-img">
+                                     </div>
+                                  </div>
+                                  <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
+                                     <span class="iq-offer-sub d-block text-primary w-100">Flat 40% off</span>
+                                     <h4 class="iq-offer-title d-block  w-100 mb-4">Weekly Box</h4>
+                                     <div class="iq-btn-container d-block w-100">
+                                        <div class="iq-btn-container containerbtn" id="banner-action">
+                                            <a href="{% url 'shop:product_list' %}">
+                                               <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #d8f1e5; color: #1c2137; font-family: 'Circular Book', sans-serif; font-weight: 500;
+                                box-shadow: -1px 2px 33px -8px rgba(0, 0, 0, 0.418);
+                                " >
+                                                  Create
+                                                     <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+                                               </div>
+                                            </a>
+                                         </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                        <div class="col-lg-6 position-relative">
+                            <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-y="50" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+                               <div class="iq-product-offer-block overflow-hidden rounded position-relative">
+                                  <div class="iq-offer-img">
+                                     <div class="iq-offer-back-img iq-offer-back-img-2">
+                                     </div>
+                                  </div>
+                                  <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
+                                     <span class="iq-offer-sub d-block text-primary w-100">Up to 80% off</span>
+                                     <h4 class="iq-offer-title d-block  w-100 mb-4">Fresh Grocery</h4>
+                                     <div class="iq-btn-container d-block w-100">
+                                        <div class="iq-btn-container containerbtn" id="banner-action">
+                                            <a href="{% url 'shop:product_list' %}">
+                                               <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #d8f1e5; color: #1c2137; font-family: 'Circular Book', sans-serif; font-weight: 500;
+                                box-shadow: -1px 2px 33px -8px rgba(0,0,0,0.55);
+                                " >
+                                                    Shop Now
+                                                     <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+                                               </div>
+                                            </a>
+                                         </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+     </section>
+   
+  </div>
+{% endblock %} 
