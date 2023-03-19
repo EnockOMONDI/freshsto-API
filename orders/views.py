@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
@@ -41,30 +42,14 @@ def order_create(request):
             'order': order,
             'total_cost': total_cost ,
             'discount':  discount,
-            'local_css_urls': [ "assets/css/libs.min.css",
-                            "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
-                            "assets/css/foodsto.mine209.css?v=1.0.0"],
-            'local_js_urls':  [
-                            "assets/js/libs.min.js",
-                            "assets/vendor/gsap/gsap.min.js",
-                            "assets/vendor/gsap/ScrollTrigger.min.js",
-                            "assets/js/app.js",
-                            "assets/js/gsap.js",
-                            "assets/js/slider.js"]
-    })
+            'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+            'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
     else:
         form = OrderCreateForm()
     return render(request, 'orders/order/createorder.html', {
         
         'form': form,
-        'local_css_urls': [ "assets/css/libs.min.css",
-                            "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
-                            "assets/css/foodsto.mine209.css?v=1.0.0"],
-        'local_js_urls':  [
-                            "assets/js/libs.min.js",
-                            "assets/vendor/gsap/gsap.min.js",
-                            "assets/vendor/gsap/ScrollTrigger.min.js",
-                            "assets/js/app.js",
-                            "assets/js/gsap.js",
-                            "assets/js/slider.js"]
-    })
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })

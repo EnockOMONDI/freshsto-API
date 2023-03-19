@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\HP 440 g3\Desktop\Apps\DEPLOY\freshsto-API\project_env"
+VIRTUAL_ENV="C:\Users\HP 440 g3\Desktop\Apps\PROJECTS\YUMI-1.1\project_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

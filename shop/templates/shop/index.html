@@ -13,130 +13,120 @@
     
 <!-- Nav end -->
 <div class="banner section-padding-120 pb-0" id="home-1">
-<div class="banner-slider-2" id="banner-slider2-image">
-   <div class="slider-1"></div>
-   <div class="slider-2"></div>
-   <div class="slider-3"></div>
-   <div class="slider-4"></div>
-   <div class="slider-5"></div>
-</div>
-<div class="container">
+
+<div class="container" style="margin-top: 8%; margin-left: 3%;" >
    <div class="row">
-      <div class="col-lg-6 col-md-12 align-self-center">
-         <h3 class="mb-4 titleheading" id="banner-title">Order <span class="text-primary"> Fresh Organic<br>
-            Products
-            </span>
-            Online
-         </h3>
-         <p id="banner-description" class="description">Get naturally produced fruits, vegetables  <br>
-            and groceries delivered at your doorstep with Foodsto.
+      <div class="col-lg-9 col-md-12"  >
+        <h5 style="font-family: 'Circular Book', sans-serif; font-weight: 800; color: #011d02; ">
+      <span style="color: ;" >Feeding Kenyan families </span>   <b> for less,  every day</b>   
+
+        </h5>
+         <h2 class="mb-4 titleheading text-primary " id="banner-title" style="font-family: 'Circular Book', sans-serif; font-weight: 800;" >Delivering   savings <br>
+          & value
+          
+
+         </h2>
+         
+         </h4>
+         <p id="banner-description" class="description" style="font-family: 'Circular Book', sans-serif; font-weight: 500;">
+           Enjoy fresh fruits and vegetables, without sacrificing <br>
+           your budget. Wide range of high-quality food products <br>
+           at affordable prices,   
+           <span>(up to 80% off)</span>
+
          </p>
          <div class="iq-btn-container containerbtn" id="banner-action">
-            <a href="{% url 'shop:product_list' %}">
-               <div class="btn btn-secondary animation-btn">
-                     View More
+            <a href="{% url 'shop:welcome' %}">
+               <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #d8f1e5; color: #1c2137; font-family: 'Circular Book', sans-serif; font-weight: 500;
+box-shadow: -1px 2px 33px -8px rgba(0,0,0,0.55);
+" >
+                    Get started
                      <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
                </div>
             </a>
          </div>
          <br><br>
       </div>
-      <div class="col-md-12 col-lg-6">
-         <img src="{% static 'assets/images/banner/banner-img-2.png' %}"  id="banner-image" class="img-fluid banner1" alt="img">
+      
+      <div class="col-md-12 col-lg-3">
+         <img src="{% static 'assets/images/banner/banner-img-new2.png' %}"   id="banner-image" class="img-fluid banner1" alt="img">
       </div>
    </div>
-</div>
+   
 </div>
 
+</div>
 
-<div class="container">
-<div class=" iq-box-shadow rounded p-5 iq-grocery-card position-relative bg-white">
-  <div class="row p-0">
-    <div class="col-lg-6 col-md-6 col-xl-3 mb-xl-0 mb-4">
-      <div class="d-flex align-items-center">
-        <div class="services-icon-box-icon">
-          <span class="">
-            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" width="2083px" height="2083px" viewBox="0 0 2083 2083"
-              xml:space="preserve">
-              <image id="image1" width="2083" height="2083" x="0" y="0"
-                xlink:href="{% static 'assets/images/category-product/icon.png' %}"></image>
-            </svg>
-          </span>
+<div class="section-padding-120 pt-0">
+  <div class="about position-relative  pt-0 ">
+     <img src="{% static 'assets/images/banner/banner-2-shap1.png' %}" class="background-img background-img-3 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="banner-2-shap1" style="transform: rotate(-45deg); opacity: 1;">
+     <div class="container">
+        <div class="row">
+           <div class="col-md-6">
+              <img src="{% static 'assets/images/about-us/01.png' %}" class="img-fluid" alt="img">
+           </div>
+           <div class="col-md-6">
+              <div class="scrolling-text middle left mb-5 pt-5 mt-3">
+                 <div data-iq-gsap="onStart" data-iq-opacity="0" data-iq-position-x="200" data-iq-trigger="scroll" data-iq-scroll-scrub="true" data-iq-ease="power.inOut" style="transform: translate(200px, 0px); opacity: 0;">
+                    About Us
+                 </div>
+              </div>
+              <div class="iq-title-box mb-5 pt-5">
+                
+                <h2 id="banner-description" class="description" style="font-family: 'Circular Book', sans-serif; font-weight: 500;">
+                  Everyday value, Quality groceries, with convenience for less 
+       
+                </h2>
+                 <h5 style=" color: #131313; font-family: 'Circular Book', sans-serif; font-weight: 500;">
+                                 </h5>
+                 <div class="iq-title-divider"></div>
+              </div>
+              <div class="row">
+                 <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-center">
+                       <img src="{% static 'assets/images/about-us/03.png' %}" class="img-fluid img-width-15" alt="img">
+                       <div class="ms-4">
+                          <a href="javascript:void(0)"><h5>Affordable prices</h5></a>
+                          <p class="mb-0">Save more, pay less at Food for Less.</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-center">
+                       <img src="{% static 'assets/images/about-us/04.png' %}" class="img-fluid img-width-15" alt="img">
+                       <div class="ms-4">
+                          <a href="javascript:void(0)"><h5>Wide product range</h5></a>
+                          <p class="mb-0">Authentic Kenyan flavors, found at our market.</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6 mb-md-0 mb-4">
+                    <div class="d-flex align-items-center">
+                       <img src="{% static 'assets/images/about-us/05.png' %}" class="img-fluid img-width-15" alt="img">
+                       <div class="ms-4">
+                          <a href="javascript:void(0)"><h5>Convenient locations</h5></a>
+                          <p class="mb-0"> Hustle free. Groceries Delivered or Pick up in your area.</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                       <img src="{% static 'assets/images/about-us/06.png' %}" class="img-fluid img-width-15" alt="img">
+                       <div class="ms-4">
+                          <a href="javascript:void(0)"><h5>Sustainablee Communities</h5></a>
+                          <p class="mb-0"> Sourcing locally, building sustainable communities at Food for Less</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
         </div>
-        <div class="services-icon-box-content ms-3">
-          <h5 class="services-icon-box-title text-primary mb-0">
-            Grocery
-          </h5>
-          <p class="services-icon-box-description mb-0">Fresh grocery delivered </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-xl-3 mb-xl-0 mb-4">
-      <div class="d-flex align-items-center">
-        <div class="services-icon-box-icon">
-          <span class="">
-            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-               x="0px" y="0px" width="2083px" height="2083px" viewBox="0 0 2083 2083"
-              xml:space="preserve">
-              <image id="image2" width="2083" height="2083" x="0" y="0"
-                xlink:href="{% static 'assets/images/category-product/demo2.png' %}"></image>
-            </svg>
-          </span>
-        </div>
-        <div class="services-icon-box-content ms-3">
-          <h5 class="services-icon-box-title text-primary mb-0">
-            Fruits
-          </h5>
-          <p class="services-icon-box-description mb-0">Order nutritious Fruits</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-xl-3  mb-md-0 mb-4">
-      <div class="d-flex align-items-center">
-        <div class="services-icon-box-icon">
-          <span class="">
-            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-               x="0px" y="0px" width="2083px" height="2083px" viewBox="0 0 2083 2083"
-              xml:space="preserve">
-              <image id="image3" width="2083" height="2083" x="0" y="0"
-                xlink:href="{% static 'assets/images/category-product/demo3.png' %}"></image>
-            </svg>
-          </span>
-        </div>
-        <div class="services-icon-box-content ms-3">
-          <h5 class="services-icon-box-title text-primary mb-0">
-            Cart Value
-          </h5>
-          <p class="services-icon-box-description mb-0">Organic, High quality  and Affordable</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-xl-3  mb-md-0 mb-4">
-      <div class="d-flex align-items-center">
-        <div class="services-icon-box-icon">
-          <span class="">
-            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-               x="0px" y="0px" width="2083px" height="2083px" viewBox="0 0 2083 2083"
-              xml:space="preserve">
-              <image id="image4" width="2083" height="2083" x="0" y="0"
-                xlink:href="{% static 'assets/images/category-product/demo4.png' %}"></image>
-            </svg>
-          </span>
-        </div>
-        <div class="services-icon-box-content ms-3">
-          <h5 class="services-icon-box-title text-primary mb-0">
-            Support
-          </h5>
-          <p class="services-icon-box-description mb-0">24/7 Concerns and queries Support </p>
-        </div>
-      </div>
-    </div>
+     </div>
   </div>
 </div>
-</div>
 
-<div class="services-banner pb-0 section-padding-120 position-relative">
+
+<div class="services-banner pb-0 section-padding-120 position-relative" >
 <img src="{% static 'assets/images/banner/banner-shap-2.png' %}" class="background-img background-img-4 img-fluid"
   data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="banner2">
 <div class="container">
@@ -250,8 +240,10 @@
     </div>
     <div class="col-md-6" id="banner-image-bg"
       style="background: url(assets/images/banner/banner-2-shap.png) no-repeat scroll center center; background-size:contain; ">
-      <img alt="img" src="{% static 'assets/images/banner/man.png' %}" id="banner-image" class="img-fluid mx-auto d-block">
-    </div>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+        
+        
+      <lottie-player src="https://lottie.host/be74f6b1-a3ed-4b8d-9982-0c06f4ddba3d/xR9YYLlpps.json" background="transparent" speed="1" style="width: 430px; height: 430px;" loop autoplay></lottie-player>     </div>
   </div>
 </div>
 </div>

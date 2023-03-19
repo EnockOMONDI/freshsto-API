@@ -1,2 +1,1 @@
-web: gunicorn ecommerce.wsgi --log-file -
-
+web: gunicorn yumisrc.wsgi --log-file -

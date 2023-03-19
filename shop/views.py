@@ -25,17 +25,10 @@ def product_list(request, category_slug=None):
         'products': products,
         'client_orders':client_orders,
         'tab': 'shop',
-         'local_css_urls': [ "assets/css/libs.min.css",
-                            "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
-                            "assets/css/foodsto.mine209.css?v=1.0.0"],
-        'local_js_urls':  [
-                        "assets/js/libs.min.js",
-                        "assets/vendor/gsap/gsap.min.js",
-                        "assets/vendor/gsap/ScrollTrigger.min.js",
-                        "assets/js/app.js",
-                        "assets/js/gsap.js",
-                        "assets/js/slider.js"]
-    })
+           
+     'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
 
 def subcategory_list(request, subcategory_slug=None):
     subcategory = None
@@ -95,18 +88,9 @@ def product_detail(request, id, slug):
                   context={
                       'product': product,
                       'cart_product_form': cart_product_form,
-                    'local_css_urls': [ "assets/css/libs.min.css",
-                            "assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
-                            "assets/css/foodsto.mine209.css?v=1.0.0"],
-                    'local_js_urls':  [
-                            "assets/js/libs.min.js",
-                            "assets/vendor/gsap/gsap.min.js",
-                            "assets/vendor/gsap/ScrollTrigger.min.js",
-                            "assets/js/app.js",
-                            "assets/js/gsap.js",
-                            "assets/js/slider.js"]
-
-  })
+          'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+         'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
 
 # homepage view
 
@@ -158,6 +142,20 @@ def home(request, category_slug=None, subcategory_slug=None, minicategory_slug=N
                         "assets/js/gsap.js",
                         "assets/js/slider.js"]
     })
+@login_required(login_url ='registration:redirected-register')
+
+def welcome(request):
+    
+    # return render(request, 'shop/foodstore/homepage/index.html',   context={
+
+    return render(request, 'shop/welcome.html', {
+        
+
+        'tab': 'shop',
+       
+     'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
 
 
 def log(request):

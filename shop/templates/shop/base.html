@@ -11,8 +11,18 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <title>{% block title %}FreshSto| Organic Grocery & Fruits {% endblock %}</title>  <!--Curio On-line -->
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-    <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.ico' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css" integrity="sha512-L+sMmtHht2t5phORf0xXFdTC0rSlML1XcraLTrABli/0MMMylsJi3XA23ReVQkZ7jLkOEIMicWGItyK4CAt2Xw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" integrity="sha512-cHxvm20nkjOUySu7jdwiUxgGy11vuVPE9YeK89geLMLMMEOcKFyS2i+8wo0FOwyQO/bL8Bvq1KMsqK4bbOsPnA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/regular.min.css" integrity="sha512-3YMBYASBKTrccbNMWlnn0ZoEOfRjVs9qo/dlNRea196pg78HaO0H/xPPO2n6MIqV6CgTYcWJ1ZB2EgWjeNP6XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css" integrity="sha512-bdTSJB23zykBjGDvyuZUrLhHD0Rfre0jxTd0/jpTbV7sZL8DCth/88aHX0bq2RV8HK3zx5Qj6r2rRU/Otsjk+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/svg-with-js.min.css" integrity="sha512-kykcz2VnxuCLnfiymkPqtsNceqEghEDiHWWYMa/nOwdutxeFGZsUi1+TEWT4MyesfxybNGpJNCVXzEPXSO8aKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/v4-font-face.min.css" integrity="sha512-p0AmrzKP8l63xoFw9XB99oaYa40RUgDuMpdkrzFhi4HPHzO3bzyN2qP6bepe43OP3yj9+eGQEJGIGPcno1JdPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link type="text/css" rel="stylesheet" href="https://bbbootstrap.com/assets/css/reset.css">
     <link type="text/css" rel="stylesheet" href="https://bbbootstrap.com/assets/css/plugins.css">
     <link type="text/css" rel="stylesheet" href="https://bbbootstrap.com/assets/css/style.css?version=10.3">
@@ -22,7 +32,8 @@
     <link rel="stylesheet" href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1568904751/balloon.min.css">
  -->
 
-  
+ <script src="https://kit.fontawesome.com/6e8123f506.js" crossorigin="anonymous"></script>
+
 <script src="https://use.fontawesome.com/d97aab4e53.js"></script>
 
     <script src="https://bbbootstrap.com/assets/js/notify.js?v=1"></script>
@@ -31,7 +42,8 @@
     {% for local_css_url in local_css_urls %}
     <link rel="stylesheet" href="{% static local_css_url %}">
 {% endfor %}
-
+<link href="https://fonts.cdnfonts.com/css/circular-book" rel="stylesheet">
+                
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
    <!-- //for bootstrap working -->
    <link href="https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Handlee|Modak|Nanum+Pen+Script|Roboto|Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -45,10 +57,10 @@
 <body class="">
     <span class="screen-darken"></span>
     <!-- loader Start -->
-    <div id="loading">
+    <!-- <div id="loading">
       <div class="loader simple-loader">
           <div class="loader-body"></div>
-      </div>    </div>
+      </div>    </div> -->
       {% include 'shop/navbar.html' %}
     {% csrf_token %}
 {% block content %}

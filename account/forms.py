@@ -3,12 +3,22 @@ from django import forms
 from django.conf import settings
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from account.models import Client
+from account.models import PrivateMessage,Client
 # from account.models import Profile,Post
 from django.contrib.auth.models import User
 import datetime
 from django.forms import ModelForm, Textarea, TextInput, NumberInput, FileField, Select
+# from django.forms.extras.widgets import Select, SelectDateWidget
+from cloudinary.forms import CloudinaryFileField
 
+
+class PrivateMessageForm(forms.ModelForm):
+    class Meta:
+        model = PrivateMessage
+        fields = ['from_address', 'title', 'text']
+        labels = {
+            'from_address': 'From',
+        }
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -54,4 +64,38 @@ class UserForm(forms.ModelForm):
         except User.DoesNotExist:
             pass
 
+class ClientForm(forms.ModelForm):
+    profile_pic = CloudinaryFileField(required=False,
+
+        options = {
+            'crop': 'thumb',
+            'width': 200,
+            'height': 200,
+            'folder': 'profilepic'
+       },
+      
+    ) 
+    class Meta:
+        model = Client
+        fields = { 'profile_pic', 'county','apartment', 'username','house_no', 'area_name', 'phone_number'}
+        labels = {
+            'county': 'County :',
+            'phone_number' : 'phone_number',
+
+            'apartment' : 'apartment',
+            'username' : 'username',
+            'house_no ' : 'house_no',
+            'area_name': 'area_name'
+            
+     }
+
+        widgets = { 
+            'apartment' : TextInput(attrs={'class': u'form-control','placeholder': u'eg Kivu Homes' }),
+            'username': TextInput(attrs={'class': u'form-control','placeholder': u'eg champ'}),
+            'house_no' : TextInput(attrs={'class': u'form-control','placeholder': u'Enter House No' }),
+            'area_name' : TextInput(attrs={'class': u'form-control','placeholder': u'Enter Area Landmark' }),
+            'county': Select(attrs={'class': u'form-control'}),
+            'town': Select(attrs={'class': u'form-control'}),
+            'phone_number': NumberInput(attrs={'class': u'form-control','placeholder': u'Enter your age here'}),
+        }
 
