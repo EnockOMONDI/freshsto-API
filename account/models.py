@@ -36,13 +36,7 @@ class PrivateMessage(models.Model):
     class Meta:
         db_table = 'at_private_messages'
 
-class Client(models.Model):
-    client_id = models.AutoField(primary_key=True)
-    user = models.OneToOneField(User, on_delete=models.PROTECT)
-    is_eligible=models.BooleanField(default=False)
-    
-    
-   
+
  
 
 class Client(models.Model):
