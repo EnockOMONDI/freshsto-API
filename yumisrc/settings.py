@@ -47,10 +47,12 @@ DEBUG = True
 # DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS= ['*']
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
+    'account',
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
     'orders.apps.OrdersConfig',
@@ -70,7 +72,7 @@ INSTALLED_APPS = [
 
  
 ]
-
+AUTH_USER_MODEL = 'account.user'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -150,6 +152,7 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
 SITE_ID = 1
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

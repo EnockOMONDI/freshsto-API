@@ -3,14 +3,15 @@ from django import forms
 from django.conf import settings
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from account.models import PrivateMessage,Client
+from account.models import PrivateMessage,Client, Vendor, Supplier
 # from account.models import Profile,Post
-from django.contrib.auth.models import User
 import datetime
 from django.forms import ModelForm, Textarea, TextInput, NumberInput, FileField, Select
 # from django.forms.extras.widgets import Select, SelectDateWidget
 from cloudinary.forms import CloudinaryFileField
+from django.contrib.auth import get_user_model
 
+user = get_user_model()
 
 class PrivateMessageForm(forms.ModelForm):
     class Meta:
@@ -22,7 +23,8 @@ class PrivateMessageForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
     class Meta:
-        model = User
+        
+        model = get_user_model()
         fields = ['first_name', 'last_name', 'email']
 
         widgets = {
