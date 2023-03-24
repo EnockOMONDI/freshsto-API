@@ -13,6 +13,8 @@ SB_ADMIN_3_JS_LIBRARY_URLS = [
                            "assets/foodforless/js/libs.min.js",
                            "assets/foodforless/js/scripts.js",
                            "assets/foodforless/ScrollTrigger.min.js",
+                           "assets/foodforless/js/slider.js"
+
                          ]
 
 SB_ADMIN_2_CSS_LIBRARY_URLS =[                    

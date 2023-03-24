@@ -51,25 +51,48 @@ def welcome(request):
           })
 #Aboutusmodel
 def about_us(request,category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    adverts = Advert.objects.filter(available=True)
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        adverts = Advert.objects.filter(category=category)
-    return render(request, 'homepage/aboutus.html',{
-        'tab': 'aboutus',
-       'adverts' : adverts,
-       'categories':   categories,
-     'local_css_urls' : settings.SB_ADMIN_2_CSS_LIBRARY_URLS,
-        'local_js_urls' : settings.SB_ADMIN_2_JS_LIBRARY_URLS
+    return render(request, 'main/aboutus.html',{
+       'tab': 'aboutus',
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
+#Aboutusmodel
+def about_us2(request,category_slug=None):
+    return render(request, 'main/about2.html',{
+       'tab': 'aboutus',
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
           })
 
-def faqs(request):
-    return render(request, 'homepage/faqs.html',{
+
+def whyfood4less(request,category_slug=None):
+    return render(request, 'main/whyfood4less.html',{
+       'tab': 'whyfood4less',
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
+
+
+def news(request,category_slug=None):
+    return render(request, 'main/news.html',{
+       'tab': 'news',
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
+          
+
+def how_it_works(request,category_slug=None):
+    return render(request, 'main/how_it_works.html',{
+       'tab': 'how_it_works',
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
+          })
+
+def faqs(request,category_slug=None):
+    return render(request, 'main/faqs.html',{
         'tab': 'faqs',
-     'local_css_urls' : settings.SB_ADMIN_2_CSS_LIBRARY_URLS,
-        'local_js_urls' : settings.SB_ADMIN_2_JS_LIBRARY_URLS
+     'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
           })
 
 def pricingtable(request):
@@ -80,8 +103,8 @@ def pricingtable(request):
           })
 
 def contact_us(request):
-    return render(request, 'homepage/contactus.html',{
+    return render(request, 'main/contactus.html',{
         'tab': 'contactus',
-     'local_css_urls' : settings.SB_ADMIN_2_CSS_LIBRARY_URLS,
-        'local_js_urls' : settings.SB_ADMIN_2_JS_LIBRARY_URLS
+        'local_css_urls' : settings.SB_ADMIN_3_CSS_LIBRARY_URLS,
+        'local_js_urls' : settings.SB_ADMIN_3_JS_LIBRARY_URLS
           })

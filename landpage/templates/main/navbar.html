@@ -11,8 +11,8 @@
           
 
       
-      
-         <div class="col-lg-12 ">
+<!--       
+         <div class="col-lg-12  " >
             <div >
             <div class="row">
              
@@ -20,7 +20,9 @@
                <div class="col-md-3">
       
                </div>
-               <div class="col-md-6 d-flex align-items-center" style="  background-color: #34481d;"  >
+
+               <div style=" background-color: #34481d;" 
+                class="col-md-6 d-flex align-items-center" >
                 
                   <h6 class=" m-2" style="color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
                      Earn extra income: Become a Vendor (collection point) <span>
@@ -40,7 +42,7 @@
                      <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-twitter"></i></a></li>
                      <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-instagram"></i></a></li>
                  </ul>
-                  <h6 class=" m-2" style="color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+                  <h6 class=" m-2" style="box-shadow: -9px 10px 19px -2px rgba(52,72,29,1); color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
                      hello@foodforless.com                   </h6>
                </div>
              
@@ -48,7 +50,7 @@
             </div>
       
          </div>
-      </div>
+      </div> -->
       
       
            
@@ -73,18 +75,18 @@
                     <ul id="top-menu" class="navbar-nav">
                      <li class="">
                         <a style="font-family: 'Montserrat', sans-serif; font-weight: 700;" href="javascript:void(0)" class="menu-item">
-                           About Us
+                           About Us <i class="fas fa-chevron-down"></i>
                           
                         </a>
                         <ul class="sub-menu" style="font-family: 'Montserrat', sans-serif; font-weight: 600;" >
                           
-                           <li class=""><a href="">About Food for Less</a></li>
-                           <li class=""><a href="">How it works</a></li>
-                           <li class=""><a href="">Your Contribution</a></li>
-
-                           <li class=""><a href="">Why Food for less</a></li>
-                           <li class=""><a href="">Faqs</a></li>
-                           <li class=""><a href="">Contact us </a></li>
+                           <li class=""><a href="{% url 'landpage:about_us' %}">About Food for Less</a></li>
+                           <li class=""><a href="{% url 'landpage:about_us2' %}">How it works</a></li>
+                           <li class=""><a href="{% url 'landpage:whyfood4less' %}">Why Food for Less <br>
+                            <small> - Together we make an Impact</small> </a></li>
+                           <li class=""><a href="{% url 'landpage:news' %}">News & Blog</a></li>      
+                           <li class=""><a href="{% url 'landpage:faqs' %}">Faqs</a></li>
+                           <li class=""><a href="{% url 'landpage:contact_us' %}">Contact us </a></li>
                         </ul>
                      </li>
                     
@@ -252,7 +254,48 @@
            </nav>
         </div>
      </div>
+     
   </div>
+    
+  <div class="col-lg-12  " >
+   <div >
+   <div class="row">
+    
+   
+      <div class="col-md-3">
+
+      </div>
+
+      <div style=" background-color: #34481d;" 
+       class="col-md-6 d-flex align-items-center" >
+       
+         <h6 class=" m-2" style="color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+            Earn extra income: Become a Vendor (collection point) <span>
+             
+             <a style="color: #fafafa;" href="">
+               <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+
+               Get started
+             </a>
+              
+            </span>
+                           </h6>
+      </div>
+      <div class="col-md-3 d-flex align-items-center" style="  background-color: #34481d;"  >
+         <ul class=" m-2 info-share social-icone d-inline list-inline">
+            <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-instagram"></i></a></li>
+        </ul>
+         <h6 class=" m-2" style="box-shadow: -9px 10px 19px -2px rgba(52,72,29,1); color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+            hello@foodforless.com                   </h6>
+      </div>
+    
+      
+   </div>
+
+</div>
+</div>
 </header>
 
 

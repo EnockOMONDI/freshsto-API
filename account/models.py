@@ -26,9 +26,9 @@ COUNTY_CATEGORY_TYPES = (
 
 
 class User(AbstractUser):
-    is_client = models.BooleanField(default=False)
-    is_supplier = models.BooleanField(default=False)
-    is_vendor = models.BooleanField(default=False)
+    is_client = models.BooleanField('is client', default=False)
+    is_supplier = models.BooleanField('is supplier', default=False)
+    is_vendor = models.BooleanField('is vendor', default=False)
 
 
 class PrivateMessage(models.Model):
