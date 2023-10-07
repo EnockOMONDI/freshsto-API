@@ -1,0 +1,66 @@
+{% extends 'base/landpagebase2.html' %}
+{% load static  %}
+{% block content %}
+
+<br><br><br><br><br>
+
+<section style="background-color: #ededed;" class="about-us section-padding-120 ">
+    <div class="container">
+       <div class="row">
+        
+          <div class="col-lg-7 col-md-6 align-self-center p-3 mt-mb-0 mb-0" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-rotate="0" data-iq-trigger="scroll" style="transform: translate(0px, 0px); opacity: 1;">
+             <div class="iq-title-box mb-2">
+                
+                <span class="iq-subtitle" style="color: #34481d; font-family: 'Leckerli One', cursive; font-size: 40px;">Why Food For Less? </span>    
+                <h3 class="iq-title" style=" font-family: 'Montserrat', sans-serif; font-weight: 800; color: #34481d;">- Together we make an Impact </h3>
+                <div class="iq-title-divider"></div>
+             </div>
+             <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                Ordering from Food for Less creates a massive impact, including reducing hunger and food waste while having a positive impact on the environment, society, and the economy.
+            </p>
+                      
+            <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                One of the main benefits of ordering from Food for Less is that it helps to combat both food waste and hunger. With 30% of all food being lost or wasted during the harvest and distribution process, Food for Less works to source produce that would otherwise be discarded. This reduces the amount of food that goes to waste and ensures that more people have access to affordable (highly discounted) and nutritious food, thereby reducing food insecurity.
+            </p>
+                 
+            <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                In addition to reducing hunger and food waste, ordering from Food for Less also has positive environmental impacts. By sourcing produce that would otherwise be wasted, we are reducing the amount of resources that are used to grow, harvest, and transport food. This, in turn, reduces the environmental impact of food production, helping to mitigate climate change and other environmental challenges.
+            </p>
+            
+                  
+            <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                Ordering from Food for Less also has positive social impacts. By working with local farmers and distribution partners, we are supporting local businesses and helping to create jobs in the community. We also aim to make affordable and nutritious food accessible to everyone, regardless of their income.</p>               
+             
+          </div>
+   
+          <div class="col-md-5  align-self-center mt-mb-0 mb-0 mt-4 " id="banner-image-bg">
+            <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+              
+              
+            <lottie-player src="https://lottie.host/be74f6b1-a3ed-4b8d-9982-0c06f4ddba3d/xR9YYLlpps.json" background="transparent" 
+            speed="1" style="width: 360px; height: 360px;" loop autoplay></lottie-player>   -->
+            <div class="related-product overflow-hidden swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                <div class="swiper-wrapper list-inline m-0 p-0" id="swiper-wrapper-292dbd7e2fcbe28d" aria-live="off" style="transform: translate3d(-848px, 0px, 0px); transition-duration: 0ms;">
+                        <img src="{% static 'assets2/images/about-us/1-min.jpg' %}" class="img-fluid iq-box-shadow  rounded " alt="img">
+    
+                  
+           
+              
+              
+                </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            <!-- <div class="next2">Next</div>
+            <div class="prev2">Prev</div> -->
+          </div>
+       </div>
+    </div>
+ </section>
+
+
+  {% include "base/js.html"  %}
+  <div id="ajax_response_login"></div>
+  <div id="ajax_response_register"></div>
+  <div id="ajax_logout"></div>
+  <div id="fb-root"></div>
+  {% endblock content %}
+  

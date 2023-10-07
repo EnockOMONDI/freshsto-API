@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -88,7 +89,7 @@ class Tag(models.Model):
         return self.name
 
 class Advert(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, related_name='adverts', on_delete=models.CASCADE)
     location = models.ForeignKey(Location, related_name='adverts', on_delete=models.CASCADE)
     option = models.ForeignKey(Option, related_name='adverts', on_delete=models.CASCADE)
@@ -126,7 +127,7 @@ class Advert(models.Model):
 
 class Like(models.Model):
     Advert = models.ForeignKey(Advert, related_name="likes", on_delete=models.CASCADE) 
-    user = models.ForeignKey(User,related_name="likes" ,on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="likes" ,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.advert + '' + 'liked by' + '' + str(self.user)
@@ -136,13 +137,11 @@ class Like(models.Model):
 class Review(models.Model):
     """This class creates an ads reviewing odel."""
 
-    reviewer = models.ForeignKey(
-        User,
+    reviewer = models.ForeignKey(settings.AUTH_USER_MODEL,
         related_name='client_reviews',
         on_delete=models.CASCADE
     )
-    reviewee = models.ForeignKey(
-       User,
+    reviewee = models.ForeignKey(settings.AUTH_USER_MODEL,
         related_name='seller_reviews',
         on_delete=models.CASCADE
     )

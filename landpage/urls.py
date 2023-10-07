@@ -2,7 +2,7 @@ from django.urls import include
 from django.urls import path, re_path
 from . import views
 # from django.contrib.sitemaps.views import sitemap
-# from .sitemaps import StaticViewSitemap
+# from .sitemaps import StaticViewSitemap   
 
 # sitemaps = {
 #     'static': StaticViewSitemap,
@@ -16,6 +16,10 @@ urlpatterns = [
     re_path(r'^land_page$', views.land_page, name='land_page'),
     re_path(r'^welcome/$', views.welcome, name='welcome'),
     re_path(r'^aboutus$', views.about_us, name='about_us'),
+    re_path(r'^aboutus2$', views.about_us2, name='about_us2'),
+    re_path(r'^whyfood4less$', views.whyfood4less, name='whyfood4less'),
+    re_path(r'^news$', views.news, name='news'),
+    re_path(r'^how_it_works$', views.how_it_works, name='how_it_works'),
     re_path(r'^faqs$', views.faqs, name='faqs'),
     re_path(r'^pricingtable$', views.pricingtable, name='pricingtable'),
     re_path(r'^contactus$', views.contact_us, name='contact_us'), 

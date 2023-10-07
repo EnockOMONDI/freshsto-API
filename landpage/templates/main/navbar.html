@@ -1,15 +1,108 @@
 {% load static %}
 
 <header class="header1  has-sticky" id="main-header">
+   <style>
+      .navbar2.second-navbar2 {
+  margin-top: 29px;
+  z-index:1
+}
+   </style>
+    
+          
+
+      
+<!--       
+         <div class="col-lg-12  " >
+            <div >
+            <div class="row">
+             
+            
+               <div class="col-md-3">
+      
+               </div>
+
+               <div style=" background-color: #34481d;" 
+                class="col-md-6 d-flex align-items-center" >
+                
+                  <h6 class=" m-2" style="color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+                     Earn extra income: Become a Vendor (collection point) <span>
+                      
+                      <a style="color: #fafafa;" href="">
+                        <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+
+                        Get started
+                      </a>
+                       
+                     </span>
+                                    </h6>
+               </div>
+               <div class="col-md-3 d-flex align-items-center" style="  background-color: #34481d;"  >
+                  <ul class=" m-2 info-share social-icone d-inline list-inline">
+                     <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-facebook"></i></a></li>
+                     <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-twitter"></i></a></li>
+                     <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-instagram"></i></a></li>
+                 </ul>
+                  <h6 class=" m-2" style="box-shadow: -9px 10px 19px -2px rgba(52,72,29,1); color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+                     hello@foodforless.com                   </h6>
+               </div>
+             
+               
+            </div>
+      
+         </div>
+      </div> -->
+      
+      
+           
   <div class="container main-header">
     
      <div class="row no-gutters">
+      <div class="col-lg-12  " >
+         <div >
+         <div class="row">
+          
+         
+            <div class="col-md-3">
+      
+            </div>
+      
+            <div style=" background-color: #34481d;" 
+             class="col-md-6 d-flex align-items-center" >
+             
+               <h6 class=" m-2" style="color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+                  Earn extra income: Become a Vendor (collection point) <span>
+                   
+                   <a style="color: #fafafa;" href="">
+                     <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
+      
+                     Get started
+                   </a>
+                    
+                  </span>
+                                 </h6>
+            </div>
+            <div class="col-md-3 d-flex align-items-center" style="  background-color: #34481d;"  >
+               <ul class=" m-2 info-share social-icone d-inline list-inline">
+                  <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="javascript:void(0)"><i style="color: #fafafa;" class="fab fa-instagram"></i></a></li>
+              </ul>
+               <h6 class=" m-2" style="box-shadow: -9px 10px 19px -2px rgba(52,72,29,1); color: #fafafa; font-family: 'Montserrat', sans-serif; font-weight: 600;  "  >
+                  hello@foodforless.com                   </h6>
+            </div>
+          
+            
+         </div>
+      
+      </div>
+      </div>
         <div class="col-sm-12">
            <nav class="navbar navbar-expand-xl navbar-light menu py-0">
               <div class="logo_block">
+               <!-- change color to #34481d -->
                  <a class="navbar-brand" href="{% url 'landpage:main_page' %}">
-                    <img class="img-fluid logo" src="{% static 'assets/img/foodforless.png'  %}" alt="foodsto" style="height:60px ;" >
-                    <img class="img-fluid  logo-sticky" src="{% static 'assets/img/foodforless.png' %}" alt="foodsto">
+                    <img class="img-fluid logo" src="{% static 'assets/img/foodforless.png'  %}" alt="foodsto" style="height:85px ;" >
+                    <img class="img-fluid  logo-sticky" src="{% static 'assets/img/foodforless.png' %}"  alt="foodsto" style="height:85px ;">
                  </a>
               </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,19 +112,23 @@
                  <div id="iq-menu-container" class="menu-main-menu-container">
                     <ul id="top-menu" class="navbar-nav">
                      <li class="">
-                        <a style="font-family: 'Poppins', sans-serif; font-weight: 600;" href="javascript:void(0)" class="menu-item">About Us
+                        <a style="font-family: 'Montserrat', sans-serif; font-weight: 700;" href="javascript:void(0)" class="menu-item">
+                           About Us <i class="fas fa-chevron-down"></i>
                           
                         </a>
-                        <ul class="sub-menu" style="font-family: 'Poppins', sans-serif; font-weight: 600;" >
+                        <ul class="sub-menu" style="font-family: 'Montserrat', sans-serif; font-weight: 600;" >
                           
-                           <li class=""><a href="">About Food for Less</a></li>
-                           <li class=""><a href="">How it works</a></li>
-                           <li class=""><a href="">Your Contribution</a></li>
-                           <li class=""><a href="">Why Food for less</a></li>
+                           <li class=""><a href="{% url 'landpage:about_us' %}">About Food for Less</a></li>
+                           <li class=""><a href="{% url 'landpage:about_us2' %}">How it works</a></li>
+                           <li class=""><a href="{% url 'landpage:whyfood4less' %}">Why Food for Less <br>
+                            <small> - Together we make an Impact</small> </a></li>
+                           <li class=""><a href="{% url 'landpage:news' %}">News & Blog</a></li>      
+                           <li class=""><a href="{% url 'landpage:faqs' %}">Faqs</a></li>
+                           <li class=""><a href="{% url 'landpage:contact_us' %}">Contact us </a></li>
                         </ul>
                      </li>
                     
-                     <li class="" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+                     <!-- <li class="" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
                         <a href="javascript:void(0)" class="menu-item"  > Deals
                                                  </a>
                         <ul class="sub-menu">
@@ -39,13 +136,13 @@
                            <li class=""><a href="">Shoping Packs</a></li>
                            <li class=""><a href="">Weekend Offers</a></li>
                         </ul>
-                     </li>
+                     </li> -->
                  
-                    
-                       <li class="" style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+<!--                     
+                       <li class="" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">
                          <a href="{% url 'adverts:adverts_list' %}" class="menu-item">Contact Us
                        
-                      </li>
+                      </li> -->
                    
                    
                    
@@ -67,14 +164,14 @@
                    {% else %}
                    
                    <li class="">
-                    <a href="{% url 'login:login_redirect' %}" class="menu-item" style="font-family: 'Poppins', sans-serif; font-weight: 600;" >Sign in 
+                    <a href="{% url 'login:login_redirect' %}" class="menu-item" style="font-family: 'Montserrat', sans-serif; font-weight: 700;" >Sign in 
                   
                  </li> 
 
                    <li>
                      <div class="iq-btn-container containerbtn" >
                         <a href="{% url 'registration:redirectedregister' %}">
-                           <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #d8f1e5; color: #1c2137; font-family: 'Poppins', sans-serif; font-weight: 600;
+                           <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #34481d; color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 600;
             box-shadow: -1px 2px 33px -8px rgba(0,0,0,0.55);
             " >
                                 Get started
@@ -182,7 +279,7 @@
                     <li>
                        <div class="wishlist_count">
                           <a href="wishlist.html" data-count="0">
-                             <i class="fa fa-heart"></i>
+                             <i class="fa fa-heart "></i>
                           <span class="wcount">0</span>
                           </a>
                        </div>
@@ -195,7 +292,10 @@
            </nav>
         </div>
      </div>
+     
   </div>
+    
+
 </header>
 
 

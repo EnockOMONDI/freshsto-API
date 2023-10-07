@@ -4,16 +4,16 @@
 
 <main class="main-content">
     <!--Nav Start-->
-
+    
     <div class="iq-height" style="height: 89px;"></div>
     <!--Nav End-->
- 
+
 <!-- Nav end -->
 <div class="banner section-padding-120 pb-0" id="home-1">
   <div class="slider-image" id="banner-slider-image">
-    <div style="width: 4%;" class="slider-2"></div>
-    <div class="slider-4"></div>
-    <div style="width: 20%;" class="slider-4"></div>
+ <!-- <div style="width: 4%;" class="slider-2"></div>
+ <div class="slider-4"></div> 
+ <div style="width: 20%;" class="slider-4"></div>  -->
     <div class="slider-5"></div>
     <div style="width: 4%;" class="slider-6"></div>
     <div class="slider-text">
@@ -22,27 +22,28 @@
       </div> -->
     </div>
   </div>
-  <br><br>
-  <div class="container">
+  
+  <div class="container " style="margin-top: 20px;">
     <div class="row">
-      <div class="col-md-6 align-self-center mt-mb-0 mb-4 mt-5">
+      <div class="col-md-6 align-self-center mt-mb-0 mb-0 mt-4">
         <div class="hero-left">
           <!-- <h4 style="font-family: 'Circular Book', sans-serif; font-weight: 800; color: #011d02; ">
             <span  >Feeding Kenyan families </span> <br>  <b> for less,  every day</b>   
       
               </h4> -->
                <h3 class="mb-4 titleheading  " id="banner-title" style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: #34481d;" >
-                Feeding Kenyan families
-                for less,  every day
+                Feeding your families for less, every day!
+
                
                 
       
                </h3>
              
                 <p class="services-icon-box-description mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 500;">
- <br>
-                 Discover the  most affordable groceries in town! <b>(Upto 80% Off)</b><br>
-                   Food for Less sources directly from local farmers who face challenges with post-harvest losses. By shopping with us, you're supporting sustainable farming practices and creating a more equitable food system 
+ <br>        
+                 Discover the  most affordable groceries in town! <b>(Upto 80% Off)</b>
+                 Food for Less is a tech enabled social impact enterprise that is fighting hunger by delivering 
+                 highly subsidized, nutritious groceries to you. Sign up now and let’s get started to keep you fed and save your coins!
                 </p>
 
      
@@ -50,10 +51,10 @@
               {% if request.user.is_authenticated %}
               <div class="iq-btn-container" id="banner-action">
                 <a href="">
-                  <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #d8f1e5; color: #1c2137; font-family: 'Circular Book', sans-serif; font-weight: 500;
+                  <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #34481d; color: #ffffff; font-family: 'Circular Book', sans-serif; font-weight: 500;
     box-shadow: -1px 2px 33px -8px rgba(0,0,0,0.55);
     " >
-                       shop
+                     <b>  SHOP NOW </b>
                         <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
                   </div>
                </a>
@@ -61,10 +62,10 @@
               {% else %}
               <div class="iq-btn-container" id="banner-action">
                 <a href="">
-                  <div class="btn btn-primary animation-btn" style="border-radius: 20px; background-color: #d8f1e5; color: #1c2137; font-family: 'Circular Book', sans-serif; font-weight: 500;
+                  <div class="btn btn-primary animation-btn" style="   border-radius: 20px; background-color: #34481d; color: #ffffff;  font-family: 'Circular Book', sans-serif; font-weight: 500;
     box-shadow: -1px 2px 33px -8px rgba(0,0,0,0.55);
     " >
-                       Get started
+                        <b>GET STARTED</b>
                         <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
                   </div>
                </a>
@@ -73,24 +74,39 @@
 
         </div>
       </div>
-      <div class="col-md-6" id="banner-image-bg"
-        style="background: url(assets2/images/banner/banner-2-shap.png) no-repeat scroll center center; background-size:contain; ">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
-          
-          
-        <lottie-player src="https://lottie.host/be74f6b1-a3ed-4b8d-9982-0c06f4ddba3d/xR9YYLlpps.json" background="transparent" speed="1" style="width: 360px; height: 360px;" loop autoplay></lottie-player>     </div>
-    </div>
-
     
-  </div>
-  
-  </div>
-  
-<div class="container"  >
+      <div class="col-md-5  align-self-center mt-mb-0 mb-0 mt-4 " id="banner-image-bg">
+        <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+          
+          
+        <lottie-player src="https://lottie.host/be74f6b1-a3ed-4b8d-9982-0c06f4ddba3d/xR9YYLlpps.json" background="transparent" 
+        speed="1" style="width: 360px; height: 360px;" loop autoplay></lottie-player>   -->
+        <div class="related-product overflow-hidden swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+            <div class="swiper-wrapper list-inline m-0 p-0" id="swiper-wrapper-292dbd7e2fcbe28d" aria-live="off" style="transform: translate3d(-848px, 0px, 0px); transition-duration: 0ms;">
+                    <img src="{% static 'assets2/images/about-us/2-min.jpg' %}" class="img-fluid iq-box-shadow  rounded " alt="img">
 
- 
-  <div class="col-md-12"   >
-    <div class="  rounded  m-5  iq-grocery-card position-relative " >
+              
+       
+          
+          
+            </div>
+            
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        <!-- <div class="next2">Next</div>
+        <div class="prev2">Prev</div> -->
+      </div>
+   
+   
+  </div>
+  </div>
+  
+  </div>
+
+ <!-- style=" margin-top: -18%; "    -->
+
+<!--  
+  <div class="col-md-12"  >
+    <div class="  rounded  m-5  iq-grocery-card position-relative " style="background-color: #e3fcf0;" >
       <div class="row p-2">
         <div class="col-lg-4 position-relative p-5">
 
@@ -149,78 +165,198 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 
-</div>
 
-<div class="section-padding-120 pt-0" >
-  
-  <div class="about position-relative  pt-0 " >
-     <div class="container">
-        <div class="row">
-           <div class="col-md-4">
-              <img src="{% static 'assets2/images/about-us/01.png' %}" class="img-fluid" alt="img">
-           
+
+<section    style=" color:#34481d">
+  <div class="services-banner pb-0 m-2 position-relative">
+    <!-- <img src="{% static 'assets2/images/banner/banner-shap-2.png' %}" class="background-img background-img-4 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="banner2" style="transform: translate(0px, 0px); opacity: 1;"> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 position-relative">
+          <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+            <div class="iq-product-offer-block overflow-hidden rounded position-relative">
+              <div class="iq-offer-img">
+                <div class="iq-offer-back-img">
+                </div>
+              </div>
+              <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
+                <!-- <span class="iq-offer-sub d-block text-primary w-100">Organically Produce</span> -->
+                <h5 class="iq-offer-title d-block  w-100 mb-4 "style=" font-family: 'Montserrat', sans-serif; font-weight: 800; color: #34481d;">Vegetables</h5>
+                <a class="" href="javascript:void(0)">
+                  <div class="btn btn-secondary animation-btn" style="border-radius: 20px;">
+                      <span class="anim d-inline-block">S</span><span class="anim d-inline-block">h</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">p</span> <span class="anim d-inline-block">N</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">w</span>
+                      
+                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i></div>
+                </a>
+              </div>
             </div>
-           <div class="col-md-7">
-            
-              <div class="iq-title-box  pt-3">
-                
-                <h2 id="banner-description" class="iq-title" style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">
-                  Delivering    savings 
-                  & value  Everyday
-       
-                </h2>
-                 <h5 style=" color: #131313; font-family: 'Circular Book', sans-serif; font-weight: 500;">
-                                 </h5>
-                 <div class="iq-title-divider"></div>
-              </div>
-              <div class="row">
-                 <div class="col-md-6 mb-4">
-                    <div class="d-flex align-items-center">
-                       <img src="{% static 'assets2/images/about-us/03.png' %}" class="img-fluid img-width-15" alt="img">
-                       <div class="ms-4">
-                          <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Affordable prices</h5></a>
-                          <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">Save more, pay less at Food for Less.</p>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-6 mb-4">
-                    <div class="d-flex align-items-center">
-                       <img src="{% static 'assets2/images/about-us/04.png' %}" class="img-fluid img-width-15" alt="img">
-                       <div class="ms-4">
-                          <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Wide product range</h5></a>
-                          <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;" >Authentic Kenyan flavors, found at our market.</p>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-6 mb-md-0 mb-4">
-                    <div class="d-flex align-items-center">
-                       <img src="{% static 'assets2/images/about-us/05.png' %}" class="img-fluid img-width-15" alt="img">
-                       <div class="ms-4">
-                          <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Convenient locations</h5></a>
-                          <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;" > Hustle free. Groceries Delivered or Pick up in your area.</p>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-md-6">
-                    <div class="d-flex align-items-center">
-                       <img src="{% static 'assets2/images/about-us/06.png' %}" class="img-fluid img-width-15" alt="img">
-                       <div class="ms-4">
-                          <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Sustainablee Communities</h5></a>
-                          <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;"> Sourcing locally, building sustainable communities at Food for Less</p>
-                       </div>
-                    </div>
-                 </div>
-          
-              </div>
-           </div>
+          </div>
         </div>
-     
-     </div>
+        <div class="col-lg-3 position-relative">
+          <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-y="50" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+            <div class="iq-product-offer-block overflow-hidden rounded position-relative">
+              <div class="iq-offer-img">
+                <div class="iq-offer-back-img iq-offer-back-img-2">
+                </div>
+              </div>
+              <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
+                <!-- <span class="iq-offer-sub d-block text-primary w-100">Flat 30% off</span> -->
+                <h5 class="iq-offer-title d-block  w-100 mb-4"style=" font-family: 'Montserrat', sans-serif; font-weight: 800; color: #34481d;">Fresh Fruits</h5>
+                <div class="iq-btn-container d-block w-100">
+                  <a class="" href="javascript:void(0)">
+                    <div class="btn btn-secondary animation-btn" style="border-radius: 20px;">
+                        <span class="anim d-inline-block">S</span><span class="anim d-inline-block">h</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">p</span> <span class="anim d-inline-block">N</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">w</span>
+                        
+                    <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 position-relative">
+          <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+            <div class="iq-product-offer-block overflow-hidden rounded position-relative">
+              <div class="iq-offer-img">
+                <div class="iq-offer-back-img iq-offer-back-img-3">
+                </div>
+              </div>
+              <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
+                <!-- <span class="iq-offer-sub d-block text-primary w-100">Gluten-free</span> -->
+                <h5 class="iq-offer-title d-block  w-100 mb-4"style=" font-family: 'Montserrat', sans-serif; font-weight: 800; color: #34481d;">Vegetables</h5>
+                <div class="iq-btn-container d-block w-100">
+                  <a class="" href="javascript:void(0)">
+                    <div class="btn btn-secondary animation-btn" style="border-radius: 20px;">
+                        <span class="anim d-inline-block">S</span><span class="anim d-inline-block">h</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">p</span> <span class="anim d-inline-block">N</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">w</span>
+                        
+                    <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 position-relative">
+          <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut" style="transform: translate(0px, 0px); opacity: 1;">
+            <div class="iq-product-offer-block overflow-hidden rounded position-relative">
+              <div class="iq-offer-img">
+                <div class="iq-offer-back-img iq-offer-back-img-3">
+                </div>
+              </div>
+              <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
+                <!-- <span class="iq-offer-sub d-block text-primary w-100">Gluten-free</span> -->
+                <h5 class="iq-offer-title d-block  w-100 mb-4" style=" font-family: 'Montserrat', sans-serif; font-weight: 800; color: #34481d;" ></h5>
+                <div class="iq-btn-container d-block w-100">
+                  <a class="" href="javascript:void(0)">
+                    <div class="btn btn-secondary animation-btn" style="border-radius: 20px;">
+                        <span class="anim d-inline-block">S</span><span class="anim d-inline-block">h</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">p</span> <span class="anim d-inline-block">N</span><span class="anim d-inline-block">o</span><span class="anim d-inline-block">w</span>
+                        
+                    <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
-</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="organic-products m-5  pb-0">
+  <div class="container ">
+     <div class="row">
+      <div class="col-md-12 "  >
+      
+   
+        <div class="iq-title-box mt-2  pt-3">
+          <span class="iq-subtitle"  style="color: #34481d; font-family: 'Pacifico', cursive; font-size: 30px;">Why Food For Less?</span>
+
+          <h3 id="banner-description" class="iq-title" style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">
+            Delivering    savings 
+            &  <br> value  Everyday
+ 
+          </h3>
+          <div class="iq-title-divider"></div>
+
+        </div>
+       
+     </div>
+     <div class="row">
+      <div class="col-md-6 mb-4">
+         <div class="d-flex align-items-center">
+           <i style="color: #ffad1f;" class="fa-solid fa-hand-holding-dollar fa-4x"></i>                   <div class="ms-4">
+               <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Subsidized prices</h5></a>
+               <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                 Our partners supply highly nutritious fruits and vegetables at a lower cost through Food for Less. These items may be of a lower grade or near expiry, but we strive to provide them at a highly subsidized price to help you save more and pay less.                      </p>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6 mb-4">
+         <div class="d-flex align-items-center">
+           <i style="color: #ffad1f;" class="fa-solid fa-house fa-4x"></i>                   <div class="ms-4">
+               <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Convenience</h5></a>
+               <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;" >
+      
+            Save precious time. Order with just a click of a button and enjoy hassle-free delivery to the nearest vendor in your neighborhood.
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6 mb-md-0 mb-4">
+         <div class="d-flex align-items-center">
+           <i style="color: #ffad1f;" class="fa-solid fa-handshake-angle fa-4x"></i>
+            <div class="ms-4">
+               <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Creating sustainable communities and business opportunities
+               </h5></a>
+               <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;" >
+                 At Food for Less, we work with local farmers to source produce that may have been wasted otherwise. By doing so, we help increase their income while also supporting a network of suppliers, delivery agents, and vendors who earn a living  whilst  feeding  their  community.                         </p>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6">
+         <div class="d-flex align-items-center">
+           <i style="color: #ffad1f;" class="fa-solid fa-earth-africa fa-4x"></i>                   <div class="ms-4">
+               <a href="javascript:void(0)"><h5  style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">Fighting hunger, Reducing waste and Saving our environment</h5></a>
+               <p class="mb-0" style="color: #443f08; font-family: 'Montserrat', sans-serif; font-weight: 600;">
+                 Food for Less orders combat both food waste and hunger with 30% of food wasted during harvest and distribution and 60% of communities experiencing food insecurity. Ordering will also reduce negative impacts on finances and the environment caused by wasted resources.
+               </div>
+         </div>
+      </div>
+
+   </div>
+  </div>
+</section>
+
+
+
+
+
+
 
 <section class="organic-products m-5  pb-0">
   <div class="container ">
@@ -229,11 +365,11 @@
         <div class="col-lg-7 p-2">
          
            <div class="iq-title-box text-left">
-              <span class="iq-subtitle">How it works</span>
-              <h2 id="banner-description" class="iq-title" style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">
+              <span class="iq-subtitle"   style="color: #34481d; font-family: 'Pacifico', cursive; font-size: 30px;" >How it works</span>
+              <h3 id="banner-description" class="iq-title" style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;">
               
               Discover Our Simple Approach
-              </h2>
+              </h3>
               <div class="iq-title-divider"></div>
            </div>
            <div class="col-md-12"   >
@@ -242,7 +378,7 @@
                 <div class="col-lg-12 position-relative p-2">
         
                   <div class="d-flex align-items-center">
-               
+<!--                
                     <div class="services-icon-box-content ms-3">
                       <h5 class="services-icon-box-title  mb-2  " style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;" >
                         Equitable food system
@@ -251,8 +387,39 @@
                         We provide fresh and affordable groceries sourced directly from local farmers, who often face challenges with post-harvest losses. By shopping with us, you're not only getting the best prices on the freshest food but you're also supporting
                          a sustainable and creating a more equitable food system. Our prices are affordable, and we offer convenient delivery options to make healthy eating easy and accessible. Join us in building a more sustainable future.
                       </p>
-                    </div>
+                    </div> -->
+                    <div class="widget">
+                      <div class="menu-footer2-container">
+                          <ul id="menu-footer2" class="menu list-inline p-0 m-0">
+                         
+                              <li> <h5 class="services-icon-box-title  mb-2  " style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;" >
+                              <i class="fas fa-chevron-right me-2"></i> Join for free
+                               
+                              </h5></li>
+                              <li> <h5 class="services-icon-box-title  mb-2  " style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;" >
+                                <i class="fas fa-chevron-right me-2"></i>  Shop & Customize
+                                 
+                                </h5></li>
+                                <li> <h5 class="services-icon-box-title  mb-2  " style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;" >
+                                  <i class="fas fa-chevron-right me-2"></i>  Choose Location
+                                   
+                                  </h5></li>
+                                  <li> <h5 class="services-icon-box-title  mb-2  " style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;" >
+                                    <i class="fas fa-chevron-right me-2"></i>  Order Confirmation& delivery 
+                                     
+                                    </h5></li>
+                                    <li> <h5 class="services-icon-box-title  mb-2  " style="color: #34481d; font-family: 'Montserrat', sans-serif; font-weight: 800;" >
+                                      <i class="fas fa-chevron-right me-2"></i>  Sharing is caring
+                                       
+                                      </h5></li>
+                                    
+                              
+                          </ul>
+                      </div>
+                  
+              </div>
                   </div>
+                
                 </div>
             
              

@@ -1,10 +1,13 @@
+from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 import datetime
 from cloudinary.models import CloudinaryField
+
 
 COUNTY_CATEGORY_TYPES = (
 ('Westlands', 'Westlands'),
@@ -22,6 +25,12 @@ COUNTY_CATEGORY_TYPES = (
 )
 
 
+class User(AbstractUser):
+    is_client = models.BooleanField('is client', default=False)
+    is_supplier = models.BooleanField('is supplier', default=False)
+    is_vendor = models.BooleanField('is vendor', default=False)
+
+
 class PrivateMessage(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=127)
@@ -36,18 +45,12 @@ class PrivateMessage(models.Model):
     class Meta:
         db_table = 'at_private_messages'
 
-class Client(models.Model):
-    client_id = models.AutoField(primary_key=True)
-    user = models.OneToOneField(User, on_delete=models.PROTECT)
-    is_eligible=models.BooleanField(default=False)
-    
-    
-   
+
  
 
 class Client(models.Model):
     client_id = models.AutoField(primary_key=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE )
     profile_pic =  CloudinaryField('image', blank=True, null=True)
     username = models.TextField(max_length=127, blank=True, null=True)
     apartment = models.TextField(max_length=127, blank=True, null=True)
@@ -64,10 +67,32 @@ class Client(models.Model):
     def __str__(self):
         return self.user.first_name + " " + \
                            self.user.last_name 
-  
 
-    def create_client_profile(sender, **kwargs):
-        if kwargs['created']:
-            client = Client.objects.create(user=kwargs['instance'])
 
-    post_save.connect(create_client_profile, sender=User)
+class Supplier(models.Model):
+    supplier_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    company_name = models.CharField(max_length=255, blank=True, null=True)
+    company_logo = CloudinaryField('image', blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+
+    class Meta:
+        db_table = 'account_supplier'
+
+    def __str__(self):
+        return self.user.first_name + " " + \
+                           self.user.last_name
+
+class Vendor(models.Model):
+    Vendor_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    business_name = models.CharField(max_length=255, blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    phone_number_2 = models.CharField(max_length=20, blank=True, null=True)
+
+    class Meta:
+        db_table = 'account_vendor'
+
+    def __str__(self):
+        return self.user.first_name + " " + \
+                           self.user.last_name
